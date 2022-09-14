@@ -6,5 +6,5 @@
 #define CS240_UTILS_H
 
 void print(char *s);
-
+void printf_long(long n);
 #endif //CS240_UTILS_H
