@@ -1,4 +1,9 @@
+/*
+ *  A pitfall program about unsigned
+ */
+
 #include <stdio.h>
+
 int main(void)
 {
 	unsigned int a = 1000;
