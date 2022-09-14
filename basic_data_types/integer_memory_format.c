@@ -54,7 +54,9 @@ int main(void)
 
     char c = -2;
 
-    bin_char(c);
+    bin_char(-128);
+    bin_char(-1);
+    bin_char(-0);
     bin(-1);
 
 
