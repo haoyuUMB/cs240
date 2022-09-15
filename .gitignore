@@ -12,3 +12,7 @@ _deps
 
 .idea
 cmake-build-debug
+**/*.out
+**/*.o
+*.out
+*.o
