@@ -1,2 +1,2 @@
-add_executable(main.exe main.c)
-add_executable(main2.exe main2.c)
+add_executable(integer_memory_format.out integer_memory_format.c)
+add_executable(unsigned.out unsigned.c)
