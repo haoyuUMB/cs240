@@ -10,20 +10,35 @@
 void print(char *s) {
     printf("%s\n", s);
 }
+
+void printf_int(int n) {
+    int i = 0;
+    while (n) {
+        if (i == 3) {
+            i = 0;
+            printf(",");
+        };
+        i++;
+        printf("%d", n % 10);
+        n /= 10;
+    }
+    printf("\n");
+}
+
 void print_int(int n) {
     printf("%d\n", n);
 }
 
-void printf_long(long n){
-    char* msg = calloc(300, 1);
+void printf_long(long n) {
+    char *msg = calloc(300, 1);
     sprintf(msg, "%ld", n);
     print(msg);
     int l = strlen(msg), j = 1;
     print_int(l);
-    int i = l + (l+1) / 3 - 1;
-    for (; l > 0; i--){
+    int i = l + (l + 1) / 3 - 1;
+    for (; l > 0; i--) {
         if (j++ % 4 == 0) msg[i] = ',';
-        else msg[i] = msg[(l--)-1];
+        else msg[i] = msg[(l--) - 1];
     }
     print("heelo");
     print(msg);

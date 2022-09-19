@@ -1,0 +1,1 @@
+add_executable(main4.exe main.c)
