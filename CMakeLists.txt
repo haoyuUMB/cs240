@@ -4,3 +4,4 @@ set(CMAKE_C_STANDARD 99)
 
 add_subdirectory(basic_data_types)
 add_subdirectory(function)
+add_subdirectory(string)
