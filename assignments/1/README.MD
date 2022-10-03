@@ -96,3 +96,8 @@ So in this case, all the dogs are able to eat.
 In Sample Case #2, the cat before the second dog will not be able to eat because there will not be enough portions of
 cat food.
 
+
+
+
+
+
