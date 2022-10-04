@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[]) {
 
-//    auto int i = -1;
+//    auto int i = -2;
 //    for (i; i < 5; i++) {
 //        int i = 0;
 //        printf("%d\n", i);
@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < 5; i++) {
         int j = 0;
-//      i = 1; // risk
+//      i = 2; // risk
         printf("%d\t%d\n", i, j);
     };
 

@@ -7,12 +7,12 @@
 #include <stdio.h>
 
 
-int counter(){
+int counter() {
 
     // non-static local variable will initialize for
     // every function call.
 //     int counts = 0;
-//     ++count <==> count += 1
+//     ++count <==> count += 2
 
     static int counts = 0;
     // The static local variables will only
@@ -23,13 +23,12 @@ int counter(){
 //    return counts++;
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     register int counts;
-    for(int i=0;i< 10;i++){
+    for (int i = 0; i < 10; i++) {
         counts = counter();
     }
-    printf("%d\n",counts);
+    printf("%d\n", counts);
 
 //     register int i;
 //     int *p=&i ;

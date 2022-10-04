@@ -36,8 +36,8 @@ An integer
 
 | Case Index | Arguments  | Output |
 |------------|------------|--------|
-| 1          | "abcd" "a" | 6
-| 2          | "pppp" "p" | 0
+| 1          | "abcd" "a" | 6      |
+| 2          | "pppp" "p" | 0      |
 
 In Sample Case #1, all the letters in string S should be converted to letter a. We can keep on changing the letters to
 its preceding letter till we reach the letter a. We do not need to change the first letter as it is already a. The
@@ -52,9 +52,9 @@ operations.
 
 | Case Index | Arguments                 | Output |
 |------------|---------------------------|--------|
-| 1          | "pqrst" "ou"              | 9
-| 2          | "abf" "abf"               | 0
-| 3          | "aaaaaaaaaaaaaaab" "aceg" | 1
+| 1          | "pqrst" "ou"              | 9      |
+| 2          | "abf" "abf"               | 0      |
+| 3          | "aaaaaaaaaaaaaaab" "aceg" | 1      |
 
 n Sample Case #1, all the letters in string S should be converted to either the letter o or the letter u. For the first
 and second letters it is optimal to change them to preceding letters till they are changed to letter o. The first letter
