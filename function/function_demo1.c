@@ -18,7 +18,7 @@ void f1(int nums1[]) {
 
 
     printf(" inside nums1 [0] :%p\t%d\n", &nums1[0], nums1[0]);
-    printf(" inside nums1 [ -1] :%p\t%d\n", &nums1[-1], nums1[-1]);
+    printf(" inside nums1 [ -2] :%p\t%d\n", &nums1[-1], nums1[-1]);
     printf(" inside nums1 [ -2] :%p\t%d\n", &nums1[-2], nums1[-2]);
     printf(" inside nums1 [ -8] :%p\t%d\n", &nums1[-8], nums1[-8]);
     printf(" inside nums2 [0] :%p\t%d\n", nums2, nums2[0]);

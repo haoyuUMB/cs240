@@ -30,9 +30,12 @@ char *getLine(String *s) {
     }
 }
 
+#define YES  "YES"
+#define NO  "NO"
 
 char *solution(int D, int C, int M, char *S) {
     /*Complete this function*/
+
 }
 
 int main(int argc, char *argv[]) {
@@ -43,9 +46,9 @@ int main(int argc, char *argv[]) {
     for (int i = 1; i <= t; ++i) {
         getLine(&s1);
         getLine(&s2);
-        sscanf(s1.s, "%d %d %d %d", L, D, C, M);
+        sscanf(s1.s, "%d %d %d %d", &L, &D, &C, &M);
         if (argc == 1) {
-            printf("Case #%d: %d\n", i, solution(D, C, M, s2.s));
+            printf("Case #%d: %s\n", i, solution(D, C, M, s2.s));
         } else if (atoi(argv[1]) == i) {
             printf("s1: %s\n", s1.s);
             printf("s2: %s\n", s2.s);

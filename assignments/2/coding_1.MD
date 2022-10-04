@@ -45,9 +45,9 @@ Return string "YES" if all the dogs will be fed and string "NO" otherwise.
 
 | Case Index | Arguments       | Output |
 |------------|-----------------|--------|
-| 1          | 10 4 0 "CCDCDD" | "YES"
-| 2          | 1 2 0 "CCCC"    | "YES"
-| 3          | 2 1 0 "DCCD"    | "NO"
+| 1          | 10 4 0 "CCDCDD" | "YES"  |
+| 2          | 1 2 0 "CCCC"    | "YES"  |
+| 3          | 2 1 0 "DCCD"    | "NO"   |
 
 In Sample Case #1, there are 10 portions of dog food and 4 portions of cat food.
 
@@ -70,8 +70,8 @@ cat food. Hence, the second dog will also not eat.
 
 | Case Index | Arguments            | Output |
 |------------|----------------------|--------|
-| 1          | 4 2 2 "CDCCCDCCDCDC" | "YES"
-| 2          | 2 1 3 "DCCCCCDC"     | "NO"
+| 1          | 4 2 2 "CDCCCDCCDCDC" | "YES"  |
+| 2          | 2 1 3 "DCCCCCDC"     | "NO"   |
 
 In Sample Case #1, 2 portions of cat food appear whenever a dog eats a portion of dog food.
 
