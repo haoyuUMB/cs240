@@ -37,6 +37,13 @@ the initial number of dog food portions, the initial number of cat food portions
 and the additional portions of cat food that we add after a dog eats a portion of dog food,
 and the arrangement of animals, respectively.
 
+**Attention: the output arguments on the Gradescope:**
+
+1. s1: [length of the string S] [D] [C] [M]
+2. s2: [S]
+
+****
+
 ### Output
 
 Return string "YES" if all the dogs will be fed and string "NO" otherwise.
