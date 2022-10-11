@@ -34,6 +34,9 @@ How to use commandline arguments in C? Give an example.
 
 # Part2: Coding  (60 Points)
 
+Read the question in the README file and then complete the [solution] function
+in the Source Code file for submission.
+
 Coding 1: [README](coding_1.MD) and [Source Code](coding_1.c)
 
 Coding 2: [README](Coding_2.MD) and [Source Code](coding_2.c)
