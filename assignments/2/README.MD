@@ -33,3 +33,7 @@ How to use commandline arguments in C? Give an example.
 **Answer**:
 
 # Part2: Coding  (60 Points)
+
+Coding 1: [README](coding_1.MD) and [Source Code](coding_1.c)
+
+Coding 2: [README](Coding_2.MD) and [Source Code](coding_2.c)
