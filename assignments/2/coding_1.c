@@ -35,6 +35,7 @@ char *getLine(String *s) {
 
 char *solution(int D, int C, int M, char *S) {
     /*Complete this function*/
+    return YES;
 
 }
 
