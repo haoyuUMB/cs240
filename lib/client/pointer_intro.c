@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
+#include <string.h>
 
 //
 // Created by haoyu on 10/13/22.
@@ -34,6 +35,26 @@ int main() {
 
     char *ptr[3];
     printf("\nptr:%lu", sizeof(ptr));
+
+    ptr[0] = malloc(20);
+    printf("\nptr[0]:%p", ptr[0]);
+//    ptr[0] = "hello";// this is not initialization of the heap memory but a reassign of char pointer
+    printf("\nptr[0]:%p", ptr[0]);
+
+    // for initialization of allocation heap memory
+    // 1. for loop
+    // 2. memcpy and strcpy
+    strcpy(ptr[0], "hello world");
+    strncpy(ptr[0], "\nhello again\n", 20);
+    printf(ptr[0]);
+    printf("len:%d\n", strlen(ptr[0]));
+    printf("len:%p\n", strchr(ptr[0], 'h'));
+    printf("len:%p\n", strchr(ptr[0], 'w'));
+    memset(ptr[0], 0, 10);
+    memset(ptr[0], 'a', 10);
+    int *arr = (int *) malloc(4 * sizeof(int));
+    memset(arr, 0, 4 * sizeof(int));
+    int *arr1 = (int *) calloc(4, sizeof(int));
 
 
 }
