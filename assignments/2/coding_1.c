@@ -1,8 +1,6 @@
-//
-// Created by haoyu on 9/18/2022.
-//
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 typedef struct string {
     char *s;
@@ -35,8 +33,38 @@ char *getLine(String *s) {
 
 char *solution(int D, int C, int M, char *S) {
     /*Complete this function*/
-    return YES;
 
+/*    int countdogs=0, i=0;
+
+    printf("Input #dogs, #cats, #extra food, and order in line. EX: CDCDDDCC...: \n");
+    scanf("%d %d %d %s", &D, &C, &M, S);
+    printf("You entered:, %d , %d, %d, %s\n", D, C, M, S);
+*/
+    int i, countdogs;
+    while (S[i++] != '\0') {
+        switch (S[i]) {
+            case 'D':
+                countdogs++;
+                printf("count of dogs: %d\n", countdogs);
+
+            case 'C':
+                C--;
+                printf("Cats: %d\n", C);
+
+                if (countdogs > 0) {
+                    D--;
+                    C += M;
+                    countdogs--;
+                    printf("Dogfood: %d\n Cats: %d\n Extra food: %d\n Count of Dogs: %d\n", D, C, M, countdogs);
+                }
+        }
+    }
+
+    if (countdogs > 0) {
+        printf("NO");
+    } else {
+        printf("YES");
+    }
 }
 
 int main(int argc, char *argv[]) {
