@@ -1,4 +1,5 @@
 #include <malloc.h>
+#include <string.h>
 
 //
 // Created by haoyu on 10/20/22.
@@ -22,5 +23,4 @@ int main() {
     printf("\n%p\n", arr + 1);
     printf("%p\n", arr1 + 1);
 //    pointer to array, the length matters for pointer arithmetic, but the length does not matter for type compatability
-
 }
