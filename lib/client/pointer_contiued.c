@@ -5,6 +5,35 @@
 // Created by haoyu on 10/20/22.
 //
 
+void demo2() {
+    int (*mat)[4] = (int (*)[4]) malloc(5 * 4 * sizeof(int));
+    int *arr = (int *) mat;
+    printf("\n");
+
+    for (int i = 0; i < 20; ++i) {
+        arr[i] = i;
+        printf("%d\t", arr[i]);
+    }
+    printf("\n");
+    for (int i = 0; i < 5; ++i) {
+        printf("\n");
+        for (int j = 0; j < 4; ++j) {
+            printf("%d\t", mat[i][j]);
+        }
+    }
+    printf("\n");
+
+
+    printf("\nmat addr:%p\n", mat);
+    printf("mat + 1 addr:%p\n", mat + 1);
+    printf("*mat addr:%p\n", *mat);
+    printf("*mat + 1 addr:%p\n", *mat + 1); // next int (*mat is an int pointer)
+    printf("*(mat + 1) addr:%p\n", *(mat + 1)); // next row address (mat is int[4] pointer)
+    printf("1st row addr:%d\n", *mat + 1 == *(mat + 1));
+    printf("1st row addr:%d\n", mat + 1 == *(mat + 1));
+    printf("1st row addr:%d\n", *mat == mat);
+}
+
 void demo1() {
     int **mat = malloc(2 * sizeof(int *));
     mat[0] = malloc(4 * sizeof(int));
@@ -75,5 +104,6 @@ int main() {
     demo1();
     printf("\n%d", 010 + 1);
     printf("\n%d", 0xa1);
+    demo2();
 //    pointer to array, the length matters for pointer arithmetic, but the length does not matter for type compatability
 }
