@@ -9,4 +9,6 @@
 
 void bin(unsigned n);
 
+int randInt();
+
 #endif //CS240_UTILS_H
