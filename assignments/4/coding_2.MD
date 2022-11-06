@@ -1,5 +1,9 @@
 # Coding 2- Waiting Queue
 
+1. All test cases are given and there are no code templates
+2. There are solution analysis in the end.
+3. There are run time limits
+
 ## Problem
 
 There are N people numbered from 1 to N, standing in
@@ -28,11 +32,11 @@ The next line contains N space separated integers A<sub>i</sub>.
 For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is
 the space separated list of integers that denote the order in which the people leave the queue.
 
-## Limits
+## Limits for each test set
 
-Time limit: 30 seconds on the Gradescope.
+Time limit: 60 seconds on the Gradescope.
 
-Memory limit: 1 GB on the Gradescope.
+Memory limit: 4 GB on the Gradescope.
 
 1 ≤ T ≤ 100.
 
@@ -59,14 +63,14 @@ For the remaining cases, 1 ≤ N ≤ 100
 ```c
 Sample input:
 2
-3 3
-2 7 4
-5 6
-9 10 4 7 2
+10 5 2
+10 7 6
+
 
 Sample output:
-Case #1: 1 3 2
-Case #2: 3 5 1 2 4
+Case #1: 15
+Case #2: 12
+
 ```
 
 In Sample Case #1, there are 3 people and the limit to withdraw in one turn is 3. Below is a step-by-step description of
