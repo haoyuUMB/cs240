@@ -43,8 +43,6 @@ the space separated list of integers that denote the order in which the people l
 
 Time limit: 60 seconds on the Gradescope.
 
-Memory limit: 4 GB on the Gradescope.
-
 1 ≤ T ≤ 100.
 
 ### Test Set 1

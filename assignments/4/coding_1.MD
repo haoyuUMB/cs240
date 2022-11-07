@@ -46,7 +46,7 @@ the least amount of total time to finish the game.
 ### Limits
 
 Time limit: 60 seconds.\
-Memory limit: 4 GB.\
+
 1 ≤ T ≤ 100.\
 1 ≤ S<K<N.
 
