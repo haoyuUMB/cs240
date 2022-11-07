@@ -3,6 +3,13 @@
 1. All test cases are given and there are no code templates
 2. There are solution analysis in the end.
 3. There are run time limits
+4. Every test set runs 100 cases, avoid allocating
+   and freeing memory frequently, since it may cause
+   memory allocation issue, especially test set2. Try to use the same
+   memory for each test case.
+5. You should make sure your code runs on the
+   largest case, since if that runs correctly,
+   the other cases would be fine.
 
 ## Problem
 
