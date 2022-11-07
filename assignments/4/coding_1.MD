@@ -9,7 +9,7 @@
    memory for each test case.
 5. You should make sure your code runs on the
    largest case, since if that runs correctly,
-   the other cases would be fine.
+   the other cases would be fine in terms of memory issue.
 
 ### Problem
 
