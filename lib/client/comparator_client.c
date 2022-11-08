@@ -13,7 +13,7 @@ void stringLenComparator_demo() {
     for (int i = 0; i < 3; ++i) {
         printf(ss[i]);
     }
-//    ss[0] = ss[1];
+
     qsort(ss, 3, sizeof(char *), stringLenComparator);
     for (int i = 0; i < 3; ++i) {
         printf(ss[i]);
@@ -63,13 +63,20 @@ void sortIndex_demo() {
 }
 
 int main() {
+//    int a = 2, b = 1;
+//    int (*comparator)(void *, void *);
+//    comparator = intComparator;
+//    printf("compare a, b %d\n", comparator(&a, &b));
+//    comparator = longComparator;
+//    printf("compare a, b %d\n", comparator(&a, &b));
+
     intComparator_demo();
     stringLenComparator_demo();
     sortIndex_demo();
-    time(NULL);
-    printf("Hours since January 1, 1970 = %ld\n", time(NULL) / 3600);
-    srand(time(NULL));
-    printf("%d\n", rand());
-    printf("%d\n", RAND_MAX);
+//    time(NULL);
+//    printf("Hours since January 1, 1970 = %ld\n", time(NULL) / 3600);
+//    srand(time(NULL));
+//    printf("%d\n", rand());
+//    printf("%d\n", RAND_MAX);
 
 }

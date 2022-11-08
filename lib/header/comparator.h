@@ -7,6 +7,8 @@
 
 int intComparator(const void *const a, const void *const b);
 
+int longComparator(const void *const a, const void *const b);
+
 int *randIntArray(int *const arr, int l, int max);
 
 void print_IntArray(int *const arr, int l);

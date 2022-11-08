@@ -9,6 +9,10 @@ int intComparator(const void *const a, const void *const b) {
     return *(int *) a - *(int *) b;
 }
 
+int longComparator(const void *const a, const void *const b) {
+    return *(long *) a - *(long *) b;
+}
+
 int stringLenComparator(const void **const a, const void **const b) {
     return strlen(*a) - strlen(*b);
 }
