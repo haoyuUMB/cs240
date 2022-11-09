@@ -68,13 +68,16 @@ For the remaining cases, 1 ≤ N ≤ 100
 ```c
 Sample input:
 2
-10 5 2
-10 7 6
+3 3
+2 7 4
+5 6
+9 10 4 7 2
+
 
 
 Sample output:
-Case #1: 15
-Case #2: 12
+Case #1: 1 3 2
+Case #2: 3 5 1 2 4
 
 ```
 
