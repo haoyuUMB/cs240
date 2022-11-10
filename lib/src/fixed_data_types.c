@@ -30,8 +30,7 @@ FIQueue new_FIQueue(int l) {
 // enqueue from end
 FIQueue *enqueue_FIQueue(FIQueue *const q, int val) {
     if (q->len == q->num) return NULL;
-    q->data[q->end] = val;
-    q->end++;
+    q->data[q->end++] = val;
     q->num++;
     if (q->end == q->len) q->end = 0;
     return q;
@@ -39,15 +38,25 @@ FIQueue *enqueue_FIQueue(FIQueue *const q, int val) {
 
 FIQueue *dequeue_FIQueue(FIQueue *const q, int *val) {
     if (q->num == 0) return NULL;
-    *val = q->data[q->top];
+    *val = q->data[q->top++];
     q->num--;
-    q->top++;
     if (q->top == q->len) q->top = 0;
     return q;
 }
 
 void print_FIQueue(FIQueue *const q) {
-//    print_IntArray(q->data, q->)
+    printf("Queue top: %d\tend: %d\tnum: %d\n", q->top, q->end, q->num);
+    if (q->top < q->end) {
+        for (int i = q->top; i < q->end; i++)
+            printf("%d\t", q->data[i]);
+        printf("\n");
+        return;
+    }
+    for (int i = q->top; i < q->len; i++)
+        printf("%d\t", q->data[i]);
+    for (int i = 0; i < q->end; i++)
+        printf("%d\t", q->data[i]);
+    printf("\n");
 }
 
 void print_FIStack(FIStack *const st) {

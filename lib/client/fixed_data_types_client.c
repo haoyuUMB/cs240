@@ -7,15 +7,15 @@
 #include "comparator.h"
 
 void test_fixed_queue() {
-    int l = 10, *val;
+    int l = 10, val;
     FIQueue q = new_FIQueue(l);
     FIQueue *p_q = &q;
     for (int i = 0; i < l; ++i) {
         enqueue_FIQueue(p_q, i);
     }
-    print_IntArray(q.data, q.num);
+    print_IntArray(q.data, q.len);
     for (int i = 0; i < l; ++i) {
-        dequeue_FIQueue(p_q, val);
+        dequeue_FIQueue(p_q, &val);
         printf("%d\t", val);
     }
 }

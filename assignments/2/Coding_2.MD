@@ -69,8 +69,9 @@ operations.
 
 In Sample Case #3, we only need to change the last letter b to either a or c. Thus, we only need 1 operation.
 
-
-
-
-
-
+| Data Type | Size (Bytes) |
+|-----------|--------------|
+| short     | 2            |
+| int       | 4            |
+| long      | 8            |
+| pointer   | 8            |
