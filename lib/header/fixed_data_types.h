@@ -26,4 +26,8 @@ FIQueue *enqueue_FIQueue(FIQueue *const q, int val);
 
 FIQueue *dequeue_FIQueue(FIQueue *const q, int *val);
 
+void print_FIStack(FIStack *const st);
+
+void print_FIQueue(FIQueue *const q);
+
 #endif //CS240_FIXED_DATA_TYPES_H

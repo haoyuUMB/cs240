@@ -4,6 +4,7 @@
 
 #include <malloc.h>
 #include "fixed_data_types.h"
+#include "comparator.h"
 
 FIStack new_FIStack(int l) {
     return (FIStack) {calloc(l, sizeof(int)), l, 0};
@@ -21,22 +22,34 @@ FIStack *pop_FIStack(FIStack *const st, int *val) {
     return st;
 }
 
+// top is 1 pre the first item and end is at the last item
 FIQueue new_FIQueue(int l) {
     return (FIQueue) {calloc(l, sizeof(int)), l, 0, 0, 0};
 }
 
+// enqueue from end
 FIQueue *enqueue_FIQueue(FIQueue *const q, int val) {
     if (q->len == q->num) return NULL;
-    q->num++;
-    if (++q->end == q->len) q->end = 0;
     q->data[q->end] = val;
+    q->end++;
+    q->num++;
+    if (q->end == q->len) q->end = 0;
     return q;
 }
 
 FIQueue *dequeue_FIQueue(FIQueue *const q, int *val) {
     if (q->num == 0) return NULL;
+    *val = q->data[q->top];
     q->num--;
-    *val = q->data[q->top++];
+    q->top++;
     if (q->top == q->len) q->top = 0;
     return q;
+}
+
+void print_FIQueue(FIQueue *const q) {
+//    print_IntArray(q->data, q->)
+}
+
+void print_FIStack(FIStack *const st) {
+    print_IntArray(st->data, st->len);
 }

@@ -9,3 +9,6 @@ add_executable(const_demo_client.out const_demo_client.c)
 
 add_executable(comparator_client.out comparator_client.c)
 target_link_libraries(comparator_client.out cs240-lib)
+
+add_executable(fixed_data_types_client.out fixed_data_types_client.c)
+target_link_libraries(fixed_data_types_client.out cs240-lib)
