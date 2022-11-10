@@ -67,7 +67,7 @@ int main() {
 //    int (*comparator)(void *, void *);
 //    comparator = intComparator;
 //    printf("compare a, b %d\n", comparator(&a, &b));
-//    comparator = longComparator;
+//    comparator = longComparator; // even though it works but be aware of overflow
 //    printf("compare a, b %d\n", comparator(&a, &b));
 
     intComparator_demo();

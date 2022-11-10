@@ -6,6 +6,8 @@ add_executable(pointer_contiued.out pointer_contiued.c)
 add_executable(pointer_continued2.out pointer_continued2.c)
 add_executable(const_demo_client.out const_demo_client.c)
 
+add_executable(function_pointers_demo.out function_pointers_demo..c)
+target_link_libraries(function_pointers_demo.out cs240-lib)
 
 add_executable(comparator_client.out comparator_client.c)
 target_link_libraries(comparator_client.out cs240-lib)
@@ -15,3 +17,4 @@ target_link_libraries(fixed_data_types_client.out cs240-lib)
 
 add_executable(struct_intro_client.out struct_intro_client.c)
 target_link_libraries(struct_intro_client.out cs240-lib)
+
