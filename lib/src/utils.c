@@ -39,3 +39,7 @@ void print_IntArray(int *const arr, int l) {
     printf("\n");
 }
 
+void *resize(void *a, int size) {
+    a = realloc(a, size);
+    TEST_NULL(a, "within utils.c file", "resize function")
+}

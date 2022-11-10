@@ -23,4 +23,10 @@ void bin(unsigned n);
 
 int randInt();
 
+int *randIntArray(int *const arr, int l, int max);
+
+void print_IntArray(int *const arr, int l);
+
+void *resize(void *a, int size);
+
 #endif //CS240_UTILS_H

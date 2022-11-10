@@ -22,7 +22,7 @@ FIStack *pop_FIStack(FIStack *const st, int *val) {
     return st;
 }
 
-// top is 1 pre the first item and end is at the last item
+// top is at the first item and end is at 1 after the last item
 FIQueue new_FIQueue(int l) {
     return (FIQueue) {calloc(l, sizeof(int)), l, 0, 0, 0};
 }

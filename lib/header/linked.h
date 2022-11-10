@@ -2,8 +2,8 @@
 // Created by haoyu on 11/5/22.
 //
 
-#ifndef CS240_LIST_H
-#define CS240_LIST_H
+#ifndef CS240_LINKED_H
+#define CS240_LINKED_H
 
 typedef struct list_node {
     int val;
@@ -16,4 +16,4 @@ typedef struct stack_list {
 
 StackL push_stackl(StackL *st, int val);
 
-#endif //CS240_LIST_H
+#endif //CS240_LINKED_H

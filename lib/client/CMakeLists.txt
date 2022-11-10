@@ -12,3 +12,6 @@ target_link_libraries(comparator_client.out cs240-lib)
 
 add_executable(fixed_data_types_client.out fixed_data_types_client.c)
 target_link_libraries(fixed_data_types_client.out cs240-lib)
+
+add_executable(struct_intro_client.out struct_intro_client.c)
+target_link_libraries(struct_intro_client.out cs240-lib)
