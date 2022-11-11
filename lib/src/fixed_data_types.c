@@ -7,18 +7,20 @@
 #include "comparator.h"
 
 FIStack new_FIStack(int l) {
-    return (FIStack) {calloc(l, sizeof(int)), l, 0};
+    return (FIStack) {calloc(l, sizeof(int)), l, 0, push_FIStack, pop_FIStack};
 }
 
 FIStack *push_FIStack(FIStack *const st, int val) {
-    if (st->i == st->len) return NULL;
-    st->data[st->i++] = val;
+    if (st->i == st->len) return NULL;// verify full stack
+    st->data[st->i] = val;
+    st->i++;
     return st;
 }
 
 FIStack *pop_FIStack(FIStack *const st, int *val) {
-    if (st->i == 0) return NULL;
-    *val = st->data[--st->i];
+    if (st->i == 0) return NULL; // verify empty stack
+    *val = st->data[st->i];
+    st->i--;
     return st;
 }
 
@@ -60,5 +62,7 @@ void print_FIQueue(FIQueue *const q) {
 }
 
 void print_FIStack(FIStack *const st) {
-    print_IntArray(st->data, st->len);
+    printf("Stack st:%p\t i: %d\tlen: %d\n", st, st->i, st->len);
+
+    print_IntArray(st->data, st->i);
 }

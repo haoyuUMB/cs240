@@ -7,6 +7,10 @@
 
 typedef struct fix_int_stack {
     int *data, len, i;
+
+    struct fix_int_stack *(*push)(struct fix_int_stack *, int);
+
+    struct fix_int_stack *(*pop)(struct fix_int_stack *, int *);
 } FIStack;
 
 typedef struct fix_int_queue {
@@ -17,6 +21,11 @@ FIStack new_FIStack(int l);
 
 // NULL means fail, st means succeed
 FIStack *push_FIStack(FIStack *const st, int val);
+
+
+// suppose we return int how do we differentiate failure and success?
+// what to return if pop from an empty stack
+// int pop_FIStack(FIStack *const st);
 
 FIStack *pop_FIStack(FIStack *const st, int *val);
 
