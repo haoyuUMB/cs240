@@ -10,6 +10,8 @@ typedef struct list_node {
     struct list_node *next;
 } Node;
 
+Node *new_node(int val, Node *next);
+
 
 /*
  * Linked Integer Stack Implementation
@@ -27,8 +29,25 @@ StackL *push_stackINode(StackL *st, int val);
 StackL *pop_stackINode(StackL *st, int *val);
 
 void print_stackINode(StackL st);
+
+
 /*
+ * Linked Integer Queue Implementation
+ *
  *
  * */
+
+typedef struct queue_list {
+    Node *top, *end;
+} QueueL;
+
+QueueL new_queueINode();
+
+QueueL *enqueueINode(QueueL *q, int val);
+
+QueueL *dequeueINode(QueueL *q, int *val);
+
+void print_queueINode(QueueL q);
+
 
 #endif //CS240_LINKED_H
