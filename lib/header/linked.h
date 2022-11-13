@@ -8,12 +8,27 @@
 typedef struct list_node {
     int val;
     struct list_node *next;
-} LNode;
+} Node;
 
+
+/*
+ * Linked Integer Stack Implementation
+ *
+ *
+ * */
 typedef struct stack_list {
-    LNode *top;
+    Node *top;
 } StackL;
 
-StackL push_stackl(StackL *st, int val);
+StackL new_stackINode();
+
+StackL *push_stackINode(StackL *st, int val);
+
+StackL *pop_stackINode(StackL *st, int *val);
+
+void print_stackINode(StackL st);
+/*
+ *
+ * */
 
 #endif //CS240_LINKED_H
