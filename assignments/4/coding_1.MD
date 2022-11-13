@@ -56,7 +56,7 @@ N ≤ 1000.
 
 #### Test Set 2
 
-N ≤ 109.
+N ≤ 10<sup>9<sup>.
 
 ## Sample
 
