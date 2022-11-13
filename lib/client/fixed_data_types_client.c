@@ -22,6 +22,28 @@ void test_fixed_queue() {
     printf("\n");
 }
 
+/*
+ * 5 6
+ * 9 10 4 7 2
+ *
+ *
+ * */
+
+void test_fixed_queue_waiting_queue() {
+    int n = 5, M = 6, k=0;
+    int arr[] = {9, 10, 4, 7, 2};
+    for (int i = 0; i < ; ++i) {
+        
+    }
+    int res[n];
+    while (n){
+        for (int i = 0; i < n; ++i) {
+            
+        }
+    }
+    
+}
+
 
 void stack_demo() {
     char s1[] = "[()]{}{[()()]()}";
