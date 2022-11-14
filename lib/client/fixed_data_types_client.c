@@ -26,22 +26,26 @@ void test_fixed_queue() {
  * 5 6
  * 9 10 4 7 2
  *
- *
+ * 3 5 1 2 4
  * */
 
 void test_fixed_queue_waiting_queue() {
-    int n = 5, M = 6, k=0;
+    int n = 5, M = 6, k = 0;
     int arr[] = {9, 10, 4, 7, 2};
-    for (int i = 0; i < ; ++i) {
-        
+    FIQueue q = new_FIQueue(5);
+    for (int i = 0; i < 5; ++i) {
+        enqueue_FIQueue(&q, i);
     }
-    int res[n];
-    while (n){
-        for (int i = 0; i < n; ++i) {
-            
+    print_FIQueue(&q);
+    int index;
+    while (dequeue_FIQueue(&q, &index)) {
+        if (arr[index] <= M) printf("%d\t", index + 1);
+        else {
+            arr[index] -= M;
+            enqueue_FIQueue(&q, index);
         }
     }
-    
+    printf("\n");
 }
 
 
@@ -84,4 +88,5 @@ void stack_demo() {
 int main() {
     test_fixed_queue();
     stack_demo();
+    test_fixed_queue_waiting_queue();
 }
