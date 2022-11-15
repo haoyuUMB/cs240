@@ -6,6 +6,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+#define UTILS "utils.c"
+
 int setNthBit(int x, int n) {
     return x | (1 << n - 1);
 }
@@ -39,7 +41,16 @@ void print_IntArray(int *const arr, int l) {
     printf("\n");
 }
 
+void print_LongArray(long *const arr, int l) {
+    for (int i = 0; i < l; ++i) {
+        printf("%ld\t", arr[i]);
+    }
+    printf("\n");
+}
+
 void *resize(void *a, int size) {
     a = realloc(a, size);
-    TEST_NULL(a, "within utils.c file", "resize function")
+    TEST_NULL(a, "within utils.c file", "resize function");
+    TEST_OVERFLOW(a, UTILS, "resize");
+    return a;
 }

@@ -10,7 +10,7 @@
 
 **Answer**:
 
-### 2. How to create a int array of length 100 using heap memory (10 Points)
+### 2. How to create a int data of length 100 using heap memory (10 Points)
 
 **Answer**:
 

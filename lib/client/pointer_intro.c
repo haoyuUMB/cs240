@@ -26,7 +26,7 @@ int main() {
 //    int *p3 = malloc(sizeof(int));
 //    p3++;
 //    free(p3);
-    char amessage[] = "now is the time"; /* an array */
+    char amessage[] = "now is the time"; /* an data */
     char *pmessage = "now is the time"; /* a pointer */
     printf("amessage:%lu\tpmessage:%lu", sizeof(amessage), sizeof(pmessage));
     amessage[0] = 'H';

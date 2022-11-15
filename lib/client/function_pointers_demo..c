@@ -16,7 +16,7 @@ int main() {
     int a = 4, b = 2;
     char *operations[] = {"+", "-", "*", "/"};
 
-    // using an array of function pointers to reference the above 4 functions
+    // using an data of function pointers to reference the above 4 functions
     int (*func_ptr[4])(int, int) = {add, subtract, multiply, divide};
 
     for (int i = 0; i < 4; i++) {
