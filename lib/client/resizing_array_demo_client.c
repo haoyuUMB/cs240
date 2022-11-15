@@ -53,10 +53,30 @@ void shuffle_demo() {
 
 }
 
+int int_comparator(void *const a, void *const b, void *const data) {
+    return *(int *) a - *(int *) b;
+}
+
+void merge_sort_demo() {
+    Array arr = new_array(sizeof(int));
+    Array *p_arr = &arr;
+    for (int i = 0; i < 10; ++i) {
+        append_array(p_arr, &i);
+    }
+    shuffle_array(p_arr);
+    print_array(arr);
+    print_int_array(arr.data, arr.length);
+
+    mergesort_array(p_arr, int_comparator);
+    print_array(arr);
+    print_int_array(arr.data, arr.length);
+}
+
 int main() {
 //    int_array_demo();
 //    long_array_demo();
-    shuffle_demo();
+//    shuffle_demo();
+    merge_sort_demo();
 
     int arr[] = {1, 2};
     memswap(arr, arr + 1, 4);
