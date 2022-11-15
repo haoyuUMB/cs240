@@ -15,6 +15,12 @@ Array *append_array(Array *const arr, void *val);
 
 Array *pop_array(Array *const arr, void *val);
 
+Array *shuffle_array(Array *const arr);
+
+void swap_array(Array *const arr, int i, int j);
+
+void *index_address_array(Array *const arr, int i);
+
 void print_array(Array arr);
 
 #endif //CS240_RESIZING_ARRAY_H

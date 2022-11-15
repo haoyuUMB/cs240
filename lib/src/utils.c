@@ -5,6 +5,7 @@
 #include <utils.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define UTILS "utils.c"
 
@@ -23,25 +24,30 @@ void bin(unsigned n) {
     printf("\n");
 }
 
-int randInt() {
+int rand_int() {
     srand(time(NULL));
     return rand();
 }
 
-int *randIntArray(int *const arr, int l, int max) {
+int rand_int_range(int range) {
+    srand(time(NULL));
+    return rand() % range;
+}
+
+int *rand_int_array(int *const arr, int l, int max) {
     srand(time(NULL));
     for (int i = 0; i < l; ++i) arr[i] = rand() % max;
     return arr;
 }
 
-void print_IntArray(int *const arr, int l) {
+void print_int_array(int *const arr, int l) {
     for (int i = 0; i < l; ++i) {
         printf("%d\t", arr[i]);
     }
     printf("\n");
 }
 
-void print_LongArray(long *const arr, int l) {
+void print_long_array(long *const arr, int l) {
     for (int i = 0; i < l; ++i) {
         printf("%ld\t", arr[i]);
     }
@@ -53,4 +59,14 @@ void *resize(void *a, int size) {
     TEST_NULL(a, "within utils.c file", "resize function");
     TEST_OVERFLOW(a, UTILS, "resize");
     return a;
+}
+
+// this is better than alloc, since as an utils function
+// this may call very frequently, and stack memory is
+// the efficient and clean choice for temp data storage
+void memswap(void *const a, void *const b, int size) {
+    char tmp[size];
+    memcpy(tmp, b, size);
+    memcpy(b, a, size);
+    memcpy(a, tmp, size);
 }

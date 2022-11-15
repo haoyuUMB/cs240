@@ -36,6 +36,25 @@ Array *pop_array(Array *const arr, void *val) {
     }
 }
 
+
+Array *shuffle_array(Array *const arr) {
+    for (int i = 0, j; i < arr->length; ++i) {
+        j = rand_int_range(arr->length - i);
+        swap_array(arr, i, i + j);
+    }
+    return arr;
+}
+
+void swap_array(Array *const arr, int i, int j) {
+    memswap(index_address_array(arr, i),
+            index_address_array(arr, j), arr->size);
+}
+
+void *index_address_array(Array *const arr, int i) {
+    if (i >= arr->length) return NULL;
+    return arr->data + i * arr->size;
+}
+
 void print_array(Array arr) {
     printf("Array data: %p\tlength: %d\tcapacity: %d\tsize: %d\n",
            arr.data, arr.length, arr.capacity, arr.size);

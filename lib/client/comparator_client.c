@@ -24,10 +24,10 @@ void intComparator_demo() {
     int a = 12, b = 11, l = 10;
     printf("a > b: %d\n", intComparator(&a, &b));
     int arr[l];
-    randIntArray(arr, l, 100);
-    print_IntArray(arr, l);
+    rand_int_array(arr, l, 100);
+    print_int_array(arr, l);
     qsort(arr, l, sizeof(int), intComparator);
-    print_IntArray(arr, l);
+    print_int_array(arr, l);
 }
 
 int index_comparator(void *const a, void *const b) {
@@ -40,9 +40,9 @@ void sortIndex_demo() {
     for (int i = 0; i < l; ++i) {
         arr[i] = i;
     }
-    print_IntArray(arr, l);
-    randIntArray(arr, l, 100);
-    print_IntArray(arr, l);
+    print_int_array(arr, l);
+    rand_int_array(arr, l, 100);
+    print_int_array(arr, l);
 
     int aux[l][2];
     for (int i = 0; i < l; ++i) {
@@ -57,8 +57,8 @@ void sortIndex_demo() {
         }
     }
     printf("\n");
-    print_IntArray(aux2[0], l);
-    print_IntArray(aux2[1], l);
+    print_int_array(aux2[0], l);
+    print_int_array(aux2[1], l);
 
 }
 
