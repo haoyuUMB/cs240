@@ -14,7 +14,7 @@ void test_fixed_queue() {
     for (int i = 0; i < l; ++i) {
         enqueue_FIQueue(p_q, i);
     }
-    print_IntArray(q.data, q.len);
+    print_int_array(q.data, q.len);
     for (int i = 0; i < l; ++i) {
         dequeue_FIQueue(p_q, &val);
         printf("%d\t", val);

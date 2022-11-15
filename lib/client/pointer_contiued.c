@@ -110,5 +110,5 @@ int main() {
     printf("\n%d", 010 + 1);
     printf("\n%d", 0xa1);
     demo2();
-//    pointer to array, the length matters for pointer arithmetic, but the length does not matter for type compatability
+//    pointer to data, the length matters for pointer arithmetic, but the length does not matter for type compatability
 }

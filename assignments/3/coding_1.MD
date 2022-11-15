@@ -38,7 +38,7 @@ return res;
 ### Arguments
 
 Given a function solution which receives arguments as [L], [S], [res] the
-length of the string [S], the string [S] and the array [res]
+length of the string [S], the string [S] and the data [res]
 to store the results
 
 **Attention: the output arguments on the Gradescope:**

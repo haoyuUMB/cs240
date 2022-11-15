@@ -21,12 +21,18 @@
 
 void bin(unsigned n);
 
-int randInt();
+int rand_int();
 
-int *randIntArray(int *const arr, int l, int max);
+int rand_int_range(int range);
 
-void print_IntArray(int *const arr, int l);
+int *rand_int_array(int *const arr, int l, int max);
+
+void print_int_array(int *const arr, int l);
+
+void print_long_array(long *const arr, int l);
 
 void *resize(void *a, int size);
+
+void memswap(void *const a, void *const b, int size);
 
 #endif //CS240_UTILS_H

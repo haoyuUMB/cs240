@@ -9,7 +9,7 @@
 ### 1. Called by Value (10 Points)
 
 What it means called by value in C?
-What are the values being passed when arguments are integer and char array respectively?
+What are the values being passed when arguments are integer and char data respectively?
 
 **Answer**:
 
