@@ -5,6 +5,8 @@
 #ifndef CS240_LINKED_H
 #define CS240_LINKED_H
 
+
+// self referential struct
 typedef struct list_node {
     int val;
     struct list_node *next;

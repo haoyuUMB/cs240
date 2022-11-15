@@ -7,6 +7,22 @@
 #include "fixed_data_types.h"
 #include "comparator.h"
 
+
+void test_fixed_stack() {
+    int l = 10, val;
+    FIStack q = new_FIStack(l);
+    FIStack *p_q = &q;
+    for (int i = 0; i < l; ++i) {
+        push_FIStack(p_q, i);
+    }
+    print_int_array(q.data, q.len);
+    for (int i = 0; i < l; ++i) {
+        pop_FIStack(p_q, &val);
+        printf("%d\t", val);
+    }
+    printf("\n");
+}
+
 void test_fixed_queue() {
     int l = 10, val;
     FIQueue q = new_FIQueue(l);
@@ -86,7 +102,8 @@ void stack_demo() {
 }
 
 int main() {
-    test_fixed_queue();
-    stack_demo();
+//    test_fixed_queue();
+//    test_fixed_stack();
+//    stack_demo();
     test_fixed_queue_waiting_queue();
 }

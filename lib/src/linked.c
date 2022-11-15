@@ -4,9 +4,11 @@
 
 #include <malloc.h>
 #include "linked.h"
+#include "utils.h"
 
 Node *new_node(int val, Node *next) {
     Node *node = malloc(sizeof(Node));
+    TEST_NULL(node, "Linked.c", "new_node");
     node->val = val;
     node->next = next;
     return node;
@@ -18,9 +20,11 @@ StackL new_stackINode() {
 }
 
 StackL *push_stackINode(StackL *st, int val) {
-    Node *node = malloc(sizeof(Node));
-    node->val = val;
-    node->next = st->top;
+//    Node *node = malloc(sizeof(Node));
+//    node->val = val;
+//    node->next = st->top;
+
+    Node *node = new_node(val, st->top);
     st->top = node;
     return st;
 }
@@ -52,7 +56,7 @@ QueueL new_queueINode() {
 QueueL *enqueueINode(QueueL *q, int val) {
     Node *node = new_node(val, NULL);
     if (q->end == NULL) {
-        q->top = q->end = node;
+        q->top = q->end = node; // q->top = (q->end = node);
         return q;
     }
     q->end->next = node;

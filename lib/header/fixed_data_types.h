@@ -31,6 +31,12 @@ FIStack *pop_FIStack(FIStack *const st, int *val);
 
 FIQueue new_FIQueue(int l);
 
+/**
+ *
+ * @param q
+ * @param val
+ * @return
+ */
 FIQueue *enqueue_FIQueue(FIQueue *const q, int val);
 
 FIQueue *dequeue_FIQueue(FIQueue *const q, int *val);
