@@ -9,9 +9,9 @@ int intComparator(const void *const a, const void *const b);
 
 int longComparator(const void *const a, const void *const b);
 
-int *rand_int_array(int *const arr, int l, int max);
+int *rand_int_array_utils(int *const arr, int l, int max);
 
-void print_int_array(int *const arr, int l);
+void print_int_array_utils(int *const arr, int l);
 
 int stringLenComparator(const void **const a, const void **const b);
 

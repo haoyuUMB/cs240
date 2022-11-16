@@ -5,7 +5,7 @@ void f() {
     long size = 100000000;
     long *arr = calloc(size, sizeof(long));
     long *arr2 = calloc(size, sizeof(long));
-//    for (int i = 0; i < size; ++i) {
+//    for (int i = 0; i < type; ++i) {
 //        arr[i] = i;
 //    }
     free(arr);

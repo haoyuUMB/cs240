@@ -15,7 +15,7 @@ void test_fixed_stack() {
     for (int i = 0; i < l; ++i) {
         push_FIStack(p_q, i);
     }
-    print_int_array(q.data, q.len);
+    print_int_array_utils(q.data, q.len);
     for (int i = 0; i < l; ++i) {
         pop_FIStack(p_q, &val);
         printf("%d\t", val);
@@ -30,7 +30,7 @@ void test_fixed_queue() {
     for (int i = 0; i < l; ++i) {
         enqueue_FIQueue(p_q, i);
     }
-    print_int_array(q.data, q.len);
+    print_int_array_utils(q.data, q.len);
     for (int i = 0; i < l; ++i) {
         dequeue_FIQueue(p_q, &val);
         printf("%d\t", val);

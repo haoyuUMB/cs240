@@ -34,13 +34,13 @@ int rand_int_range(int range) {
     return rand() % range;
 }
 
-int *rand_int_array(int *const arr, int l, int max) {
+int *rand_int_array_utils(int *const arr, int l, int max) {
     srand(time(NULL));
     for (int i = 0; i < l; ++i) arr[i] = rand() % max;
     return arr;
 }
 
-void print_int_array(int *const arr, int l) {
+void print_int_array_utils(int *const arr, int l) {
     for (int i = 0; i < l; ++i) {
         printf("%d\t", arr[i]);
     }

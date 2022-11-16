@@ -12,11 +12,11 @@
 
 #define TEST_NULL(p, file, func) if (NULL==p){ \
     fprintf(stderr, "Memory allocation failed in %s:%s\n",file, func);\
-    exit(1); \
+    exit(EXIT_FAILURE); \
 }
 #define TEST_OVERFLOW(val, file, func) if (val < 0){ \
     fprintf(stderr, "Integer overflow in %s:%s\n",file, func);\
-    exit(1); \
+    exit(EXIT_FAILURE); \
 }
 
 void bin(unsigned n);
@@ -25,9 +25,9 @@ int rand_int();
 
 int rand_int_range(int range);
 
-int *rand_int_array(int *const arr, int l, int max);
+int *rand_int_array_utils(int *const arr, int l, int max);
 
-void print_int_array(int *const arr, int l);
+void print_int_array_utils(int *const arr, int l);
 
 void print_long_array(long *const arr, int l);
 

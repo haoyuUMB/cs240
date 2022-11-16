@@ -44,7 +44,7 @@ int main() {
     print_point2d(p0);
     print_point2d(p00);
 
-    printf("The size of our Point2D type: %ld\n", sizeof(Point2D));
+    printf("The type of our Point2D type: %ld\n", sizeof(Point2D));
 
     Point2D p1 = {1, 2},
             *p2 = calloc(1, sizeof(Point2D)),

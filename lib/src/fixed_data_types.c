@@ -64,5 +64,5 @@ void print_FIQueue(FIQueue *const q) {
 void print_FIStack(FIStack *const st) {
     printf("Stack st:%p\t i: %d\tlen: %d\n", st, st->i, st->len);
 
-    print_int_array(st->data, st->i);
+    print_int_array_utils(st->data, st->i);
 }
