@@ -162,6 +162,15 @@ void merge_sort_demo() {
     print_Array_int(arr1);
 }
 
+void qsort_demo() {
+    Array arr1 = rand_Array_int(100, 100);
+    Array *p_arr1 = &arr1;
+    print_Array_int(arr1);
+
+    qsort_Array(p_arr1, int_Comparator2);
+    print_Array_int(arr1);
+}
+
 void running_time_test_selection_sort_demo() {
     test_running_time_Array_sorting(selection_sort_Array, int_Comparator, 20);
 }
@@ -188,10 +197,13 @@ int main() {
 
 //    merge_Array_range_demo();
 //    merge_sort_demo();
+//    qsort_demo();
 
 //    running_time_test_selection_sort_demo();
-    running_time_test_merge_sort_demo();
-//    sorting_comparisons(20);
+//    running_time_test_merge_sort_demo();
+
+    sorting_comparisons_mergesort_qsort(30);
+//    sorting_comparisons_selection_mergesort_qsort(20);
 
 //
 //    int arr[] = {1, 2};

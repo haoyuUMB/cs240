@@ -207,9 +207,43 @@ int int_Comparator(void *const a, void *const b, void *data) {
     return *(int *) a - *(int *) b;
 }
 
-void sorting_comparisons(int power) {
+int int_Comparator2(void *const a, void *const b) {
+    return *(int *) a - *(int *) b;
+}
+
+Array *qsort_Array(Array *const arr, COMPARATOR2) {
+    qsort(arr->data, arr->length, arr->type, com);
+    int lo = 0, hi = arr->length;
+    int flag = is_sorted_Array_range(arr, lo, hi, com);
+    if (flag) return arr;
+    fprintf(stderr, "Error: range [%d, %d) is not sorted\n", lo, hi);
+    print_Array_int_range(*arr, lo, hi);
+    exit(EXIT_FAILURE);
+    return arr;
+}
+
+void sorting_comparisons_mergesort_qsort(int power) {
     Array arr;
-    SORTS = {selection_sort_Array, mergesort_Array};
+    SORTS = {selection_sort_Array, mergesort_Array, qsort_Array};
+    for (int i = 4; i < power; ++i) {
+        arr = rand_Array_int(2 << i, INT_MAX);
+        clock_t time = clock();
+
+        sorts[1](&arr, int_Comparator);
+        double t2 = (double) (clock() - time) / CLOCKS_PER_SEC;
+
+        time = clock();
+        sorts[1](&arr, int_Comparator);
+        double t3 = (double) (clock() - time) / CLOCKS_PER_SEC;
+
+        printf("Time taken for sorting 2^%d\t%u\t length arr is: %fs\t%fs\n", i, arr.length,
+               t2, t3);
+    }
+}
+
+void sorting_comparisons_selection_mergesort_qsort(int power) {
+    Array arr;
+    SORTS = {selection_sort_Array, mergesort_Array, qsort_Array};
     for (int i = 4; i < power; ++i) {
         arr = rand_Array_int(2 << i, INT_MAX);
         clock_t time = clock();
@@ -222,8 +256,13 @@ void sorting_comparisons(int power) {
         sorts[1](&arr, int_Comparator);
         double t2 = (double) (clock() - time) / CLOCKS_PER_SEC;
 
-        printf("Time taken for sorting 2^%d\t%u\t length arr is: %fs\t%fs\n", i, arr.length,
-               t1, t2);
+        shuffle_array(&arr);
+        time = clock();
+        sorts[2](&arr, int_Comparator);
+        double t3 = (double) (clock() - time) / CLOCKS_PER_SEC;
+
+        printf("Time taken for sorting 2^%d\t%u\t length arr is: %fs\t%fs\t%fs\n", i, arr.length,
+               t1, t2, t3);
     }
 }
 
