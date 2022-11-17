@@ -4,6 +4,7 @@
 
 #include <malloc.h>
 #include <string.h>
+#include <limits.h>
 #include "resizing_array.h"
 #include "utils.h"
 
@@ -189,6 +190,41 @@ Array *mergesort_Array(Array *const arr, COMPARATOR) {
     }
     free(aux.data);
     return arr;
+}
+
+void test_running_time_Array_sorting(SORT, COMPARATOR, int power) {
+    Array arr;
+    for (int i = 4; i < power; ++i) {
+        arr = rand_Array_int(2 << i, INT_MAX);
+        clock_t time = clock();
+        sort(&arr, com);
+        printf("Time taken for sorting 2^%d\t%u\t length arr is: %fs\n", i, arr.length,
+               (double) (clock() - time) / CLOCKS_PER_SEC);
+    }
+}
+
+int int_Comparator(void *const a, void *const b, void *data) {
+    return *(int *) a - *(int *) b;
+}
+
+void sorting_comparisons(int power) {
+    Array arr;
+    SORTS = {selection_sort_Array, mergesort_Array};
+    for (int i = 4; i < power; ++i) {
+        arr = rand_Array_int(2 << i, INT_MAX);
+        clock_t time = clock();
+        sorts[0](&arr, int_Comparator);
+        double t1 = (double) (clock() - time) / CLOCKS_PER_SEC;
+
+        shuffle_array(&arr);
+
+        time = clock();
+        sorts[1](&arr, int_Comparator);
+        double t2 = (double) (clock() - time) / CLOCKS_PER_SEC;
+
+        printf("Time taken for sorting 2^%d\t%u\t length arr is: %fs\t%fs\n", i, arr.length,
+               t1, t2);
+    }
 }
 
 

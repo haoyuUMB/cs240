@@ -64,10 +64,6 @@ void swap_Array_item_demo() {
     print_Array_int(arr);
 }
 
-int int_Comparator(void *const a, void *const b, void *data) {
-    return *(int *) a - *(int *) b;
-}
-
 void compare_Array_items_demo() {
     Array arr = rand_Array_int(10, 20);
     Array *p_arr = &arr;
@@ -166,6 +162,14 @@ void merge_sort_demo() {
     print_Array_int(arr1);
 }
 
+void running_time_test_selection_sort_demo() {
+    test_running_time_Array_sorting(selection_sort_Array, int_Comparator, 20);
+}
+
+void running_time_test_merge_sort_demo() {
+    test_running_time_Array_sorting(mergesort_Array, int_Comparator, 30);
+}
+
 int main() {
 //    append_and_pop_demo();
 //    append_pop_long_array_demo();
@@ -183,7 +187,12 @@ int main() {
 //    compare_2Arrays_items_demo();
 
 //    merge_Array_range_demo();
-    merge_sort_demo();
+//    merge_sort_demo();
+
+//    running_time_test_selection_sort_demo();
+    running_time_test_merge_sort_demo();
+//    sorting_comparisons(20);
+
 //
 //    int arr[] = {1, 2};
 //    memswap(arr, arr + 1, 4);

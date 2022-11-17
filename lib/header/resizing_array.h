@@ -6,7 +6,8 @@
 #define CS240_RESIZING_ARRAY_H
 
 #define COMPARATOR int (*com)(void *const a, void *const b, void *const data)
-
+#define SORT Array * (*sort)(Array *const arr, COMPARATOR)
+#define SORTS Array * (*sorts[])(Array *const arr, COMPARATOR)
 
 typedef struct array_resizing {
     void *data;
@@ -51,9 +52,14 @@ Array *merge_Array_range(Array *const arr, Array *const aux, int lo, int mid, in
 
 Array *mergesort_Array(Array *const arr, int (*com)(void *const a, void *const b, void *const data));
 
+void test_running_time_Array_sorting(SORT, COMPARATOR, int power);
 
 void *index_address_array(Array *const arr, int i);
 
 void print_Array_attributes(Array arr);
+
+void sorting_comparisons(int power);
+
+int int_Comparator(void *const a, void *const b, void *data);
 
 #endif //CS240_RESIZING_ARRAY_H
