@@ -25,6 +25,8 @@ Array rand_Array_int(int len, int range);
 
 void print_Array_int(Array arr);
 
+void print_Array_int_range(Array arr, int lo, int hi);
+
 Array copy_Array(Array arr);
 
 void swap_Array_items(Array *const arr, int i, int j);
@@ -37,14 +39,17 @@ int min_index_Array(Array *const arr, COMPARATOR);
 
 int min_index_Array_range(Array *const arr, int i, int j, COMPARATOR);
 
-
 Array *selection_sort_Array(Array *const arr, COMPARATOR);
 
-void copy_Array_item(Array *const des, Array *const src, int i, int j);
+void copy_2Arrays_range(Array *const des, Array *const src, int di, int si, int len);
 
-Array *merge_array(Array *const arr, Array *const aux, int lo, int mid, int hi, COMPARATOR);
+int compare_2Arrays_items(Array *const des, Array *const src, int i, int j, COMPARATOR);
 
-Array *mergesort_array(Array *const arr, int (*com)(void *const a, void *const b, void *const data));
+int is_sorted_Array_range(Array *const arr, int lo, int hi, COMPARATOR);
+
+Array *merge_Array_range(Array *const arr, Array *const aux, int lo, int mid, int hi, COMPARATOR);
+
+Array *mergesort_Array(Array *const arr, int (*com)(void *const a, void *const b, void *const data));
 
 
 void *index_address_array(Array *const arr, int i);

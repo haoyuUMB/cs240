@@ -112,29 +112,63 @@ void selection_sort_Array_demo() {
     print_Array_int(arr);
 }
 
+void copy_Array_range_demo() {
+    Array arr = rand_Array_int(10, 20);
+    Array *p_arr = &arr;
+    print_Array_int(arr);
 
-int int_comparator(void *const a, void *const b, void *const data) {
-    return *(int *) a - *(int *) b;
+    Array arr2 = rand_Array_int(5, 10);
+    Array *p_arr2 = &arr2;
+    print_Array_int(arr2);
+
+    copy_2Arrays_range(p_arr2, p_arr, 0, 0, 3);
+    print_Array_int(arr2);
 }
 
+void compare_2Arrays_items_demo() {
+
+    Array arr1 = rand_Array_int(10, 100);
+    Array *p_arr1 = &arr1;
+    print_Array_int(arr1);
+
+    Array arr2 = rand_Array_int(10, 100);
+    Array *p_arr2 = &arr2;
+    print_Array_int(arr2);
+    printf("comp:\t");
+    char flags[] = {'<', '=', '>'};
+    for (int i = 0; i < arr1.length; ++i) {
+        int j = compare_2Arrays_items(p_arr1, p_arr2, i, i, int_Comparator);
+        if (j > 0) j = 1;
+        else if (j < 0) j = -1;
+        printf("%c\t", flags[j + 1]);
+    }
+
+}
+
+void merge_Array_range_demo() {
+    Array arr1 = rand_Array_int(10, 100);
+    Array aux = rand_Array_int(10, 100);
+    Array *p_arr1 = &arr1;
+    print_Array_int(arr1);
+
+    for (int i = 0; i < arr1.length - 1; i += 2) {
+        merge_Array_range(p_arr1, &aux, i, i + 1, i + 2, int_Comparator);
+    }
+    print_Array_int(arr1);
+}
 
 void merge_sort_demo() {
-    Array arr = new_Array(sizeof(int));
-    Array *p_arr = &arr;
-    for (int i = 0; i < 10; ++i) {
-        append_array(p_arr, &i);
-    }
-    shuffle_array(p_arr);
-    print_Array_attributes(arr);
-//    print_int_array(arr.data, arr.length);
+    Array arr1 = rand_Array_int(100, 100);
+    Array *p_arr1 = &arr1;
+    print_Array_int(arr1);
 
-    mergesort_array(p_arr, int_comparator);
-    print_Array_attributes(arr);
-//    print_int_array(arr.data, arr.length);
+    mergesort_Array(p_arr1, int_Comparator);
+    print_Array_int(arr1);
 }
 
 int main() {
 //    append_and_pop_demo();
+//    append_pop_long_array_demo();
 
 //    int_Array_demo();
 //    copy_Array_demo();
@@ -143,12 +177,13 @@ int main() {
 //    shuffle_demo();
 
 //    min_index_Array_demo();
-    selection_sort_Array_demo();
+//    selection_sort_Array_demo();
 
+//    copy_Array_range_demo();
+//    compare_2Arrays_items_demo();
 
-//    append_pop_long_array_demo();
-//    shuffle_demo();
-//    merge_sort_demo();
+//    merge_Array_range_demo();
+    merge_sort_demo();
 //
 //    int arr[] = {1, 2};
 //    memswap(arr, arr + 1, 4);

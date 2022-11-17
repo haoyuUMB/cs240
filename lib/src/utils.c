@@ -30,12 +30,14 @@ int rand_int() {
 }
 
 int rand_int_range(int range) {
-    srand(time(NULL));
+    static int count = 0;
+    srand(time(NULL) + count++);
     return rand() % range;
 }
 
 int *rand_int_array_utils(int *const arr, int l, int max) {
-    srand(time(NULL));
+    static int count = 0;
+    srand(time(NULL) + count++);
     for (int i = 0; i < l; ++i) arr[i] = rand() % max;
     return arr;
 }

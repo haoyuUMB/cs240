@@ -60,6 +60,17 @@ void print_Array_int(Array arr) {
     printf("\n");
 }
 
+void print_Array_int_range(Array arr, int lo, int hi) {
+    printf("Array type: %d\tlo: %d\thi: %d\t\ndata:\t",
+           arr.type, lo, hi, arr.data);
+    int *data = arr.data;
+    for (int i = lo; i < hi; ++i) {
+        printf("%d\t", data[i]);
+    }
+    printf("\n");
+}
+
+
 Array copy_Array(Array arr) {
     int size = arr.type * arr.capacity;
     void *data = malloc(arr.type * arr.capacity);
@@ -119,15 +130,20 @@ Array *selection_sort_Array(Array *const arr, COMPARATOR) {
     }
 }
 
+void copy_2Arrays_range(Array *const des, Array *const src, int di, int si, int len) {
+    // a lot of checks should be here
+    memcpy(des->data + di * des->type, src->data + si * des->type, len * des->type);
+}
 
-int compare_Arrays_items(Array *const des, Array *const src, int i, int j, COMPARATOR) {
+int compare_2Arrays_items(Array *const des, Array *const src, int i, int j, COMPARATOR) {
     return com(des->data + i * des->type, src->data + j * des->type, NULL);
 }
 
-
-void copy_Array_item(Array *const des, Array *const src, int i, int j) {
-    // a lot of checks should be here
-    memcpy(des->data + i * des->type, src->data + j + des->type, des->type);
+int is_sorted_Array_range(Array *const arr, int lo, int hi, COMPARATOR) {
+    for (int i = lo; i < hi - 1; ++i) {
+        if (compare_Array_items(arr, i, i + 1, com) > 0) return 0;
+    }
+    return 1;
 }
 
 /**
@@ -140,41 +156,38 @@ void copy_Array_item(Array *const des, Array *const src, int i, int j) {
  * @param com
  * @return
  */
-Array *merge_array(Array *const arr, Array *const aux, int lo, int mid, int hi, COMPARATOR) {
-    int size = (hi - lo) * arr->type, start = lo * arr->type;
-    memcpy(aux->data + start, arr->data + start, size);
-
-    print_Array_attributes(*arr);
-//    print_int_array(arr->data, arr->length);
-    printf("---");
-    print_Array_attributes(*aux);
-//    print_int_array(aux->data, aux->length);
-
-
-    int i = lo, j = hi;
+Array *merge_Array_range(Array *const arr, Array *const aux, int lo, int mid, int hi, COMPARATOR) {
+    copy_2Arrays_range(aux, arr, lo, lo, hi - lo);
+    int i = lo, j = mid;
     for (int k = lo; k < hi; ++k) {
-        if (i >= mid) copy_Array_item(arr, aux, k, j++);
-        else if (j >= hi) copy_Array_item(arr, aux, k, i++);
-        else if (com(arr->data + i * arr->type, aux->data + j * aux->type, NULL) <= 1)
-            copy_Array_item(arr, aux, k, i++);
-        else copy_Array_item(arr, aux, k, j++);
+        if (i >= mid) copy_2Arrays_range(arr, aux, k, j++, 1);
+        else if (j >= hi) copy_2Arrays_range(arr, aux, k, i++, 1);
+        else if (compare_2Arrays_items(aux, aux, i, j, com) <= 0)
+            copy_2Arrays_range(arr, aux, k, i++, 1);
+        else copy_2Arrays_range(arr, aux, k, j++, 1);
     }
+    int flag = is_sorted_Array_range(arr, lo, hi, com);
+    if (flag) return arr;
+    fprintf(stderr, "Error: range [%d, %d) is not sorted\n", lo, hi);
+    print_Array_int_range(*aux, lo, hi);
+    print_Array_int_range(*arr, lo, hi);
+    exit(EXIT_FAILURE);
 }
 
 
-Array *mergesort_array(Array *const arr, COMPARATOR) {
-    Array aux_array = copy_Array(*arr);
-    Array *aux = &aux_array;
+Array *mergesort_Array(Array *const arr, COMPARATOR) {
+    Array aux = copy_Array(*arr);
+    Array *p_aux = &aux;
 
     for (int len = 1; len < arr->length; len <<= 1) {
         for (int lo = 0; lo < arr->length - len; lo += (len << 1)) {
             int mid = lo + len;
             int hi = lo + (len << 1);
             if (hi > arr->length) hi = arr->length;
-            merge_array(arr, aux, lo, mid, hi, com);
+            merge_Array_range(arr, p_aux, lo, mid, hi, com);
         }
     }
-    free(aux_array.data);
+    free(aux.data);
     return arr;
 }
 
