@@ -43,7 +43,7 @@ void append_pop_long_array_demo() {
 
 
 void int_Array_demo() {
-    Array arr = rand_Array_int(10, 20);
+    Array arr = rand_Array_int(10, 29);
     print_Array_int(arr);
 }
 
@@ -202,8 +202,8 @@ int main() {
 //    running_time_test_selection_sort_demo();
 //    running_time_test_merge_sort_demo();
 
-    sorting_comparisons_mergesort_qsort(30);
-//    sorting_comparisons_selection_mergesort_qsort(20);
+//    sorting_comparisons_mergesort_qsort(30);
+    sorting_comparisons_selection_mergesort_qsort(20);
 
 //
 //    int arr[] = {1, 2};

@@ -26,7 +26,8 @@ Array new_Array_length(int type, int len) {
 
 Array *append_array(Array *const arr, void *val) {
     if (arr->length + 1 == arr->capacity) {
-        arr->capacity <<= 1;
+        arr->capacity <<= 1; // arr->capacity *= 2
+        TEST_OVERFLOW(arr->capacity, RESIZING_ARRAY, "append_array");
         arr->data = resize(arr->data, arr->capacity * arr->type);
     }
     memcpy(arr->data + arr->length * arr->type, val, arr->type);

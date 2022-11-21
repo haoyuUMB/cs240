@@ -59,7 +59,6 @@ void print_long_array(long *const arr, int l) {
 void *resize(void *a, int size) {
     a = realloc(a, size);
     TEST_NULL(a, "within utils.c file", "resize function");
-    TEST_OVERFLOW(a, UTILS, "resize");
     return a;
 }
 
