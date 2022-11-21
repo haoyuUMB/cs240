@@ -99,14 +99,12 @@ $$
 
 We can observe that:
 
-- Observation 1: If A(i,j)A(i,j)is a good subarray then all its prefix arrays A(i,k)A(i,k), such that i≤k≤ji≤k≤j are
-  also good subarray.
-- Observation 2: If A(i,j)A(i,j)is*not*a good subarray then all subarrays A(i,k)A(i,k), such that k≥jk≥j are also*not*
-  good subarray.
+- Observation 1: If A(i, j) is a good subarray then all its prefix arrays A(i,k), such that i≤k≤j are also good subarray.
+- Observation 2: If A(i,j) is not a good subarray then all subarrays A(i,k), such that k≥j are also not good subarray.
 
-We can iterate over all subarrays with a left index ii. For a fixed left index ii, we can iterate over the right index
-jj such that the subarray sum is non-negative. As soon as we find an index jj such that subarray sum of A(i,j)A(i,j)is
-less than 00, we can stop and increase the left index.
+We can iterate over all subarrays with a left index i. For a fixed left index i, we can iterate over the right index
+j such that the subarray sum is non-negative. As soon as we find an index j such that subarray sum of A(i,j) is
+less than 0, we can stop and increase the left index.
 
 The overall time complexity of the above solution would be O(N^2), which is fast enough for test set 1.
 
@@ -133,11 +131,11 @@ P(i -1) + \mathbf{A_i} & i > 0
 \end{align*}
 $$
 
-By the definition of a prefix array, we can easily note that S(i,j)=P(j)-P(i-1)S(i,j)=P(j)-P(i-1)
+By the definition of a prefix array, we can easily note that S(i,j)=P(j)-P(i-1)
 
-For every index ii, let us compute nsv(i)nsv(i)(nearest smaller value), the smallest index jj such that j≥ij≥i and
-subarray sum of A(i,j)A(i,j)is less than 0. If there is no such index we can simply set nsv(i)=N+1nsv(i)=N+1. Finding
-smallest index jj on right of ii, such that the subarray sum A(i,j)A(i,j)is less than 0
+For every index i, let us compute nsv(i)(nearest smaller value), the smallest index j such that j≥i and
+subarray sum of A(i,j) is less than 0. If there is no such index we can simply set nsv(i)=N+1. Finding
+smallest index j on right of i, such that the subarray sum A(i,j) is less than 0
 
 $$
 \begin{align*}
@@ -166,12 +164,16 @@ $$
 \end{align*}
 $$
 
-On simplification, sum of all subarray A(i,j)such that i=l and i≤j≤r
+On simplification, sum of all subarray A(i,j) such that i=l and i≤j≤r
 
-sum(l)=(P(l)+P(l+1)+P(l+2)+⋯+P(r))-(r-l+1)×P(l-1)
+$$
+\begin{align*}
+  sum(l) = (P(l) + P(l + 1) + P(l + 2) + \cdots + P(r)) - (r - l + 1) \times P(l - 1)
+\end{align*}
+$$
 
-The first term P(l)+P(l+1)+P(l+2)+⋯+P(r)can be computed by pre-calculating the prefix sum array
-of PP.
+The first term P(l)+P(l+1)+P(l+2)+⋯+P(r) can be computed by pre-calculating the prefix sum array
+of P.
 
 Let us denote prefix sum of P as PP, i.e. PP(i)=P(1)+P(2)+⋯+P(i). The above sum can be
 simplified as:
@@ -184,7 +186,7 @@ ans &= \sum\limits_{l=1}^{N} PP(r) - PP(l - 1) - (r - l + 1) \times P(l - 1)
 \end{align*}
 $$
 
-Nearest smaller value on right for each index in prefix array nsv(i)nsv(i)can be computed in O(N)O(N). Sum of all
-subarrays with fixed left index and moving right index can be computed in O(1)O(1), if we have pre computed prefix sum
-array of AA*i.e.PP and prefix sum array of P i.e. PP. Precomputation of prefix sum arrays can be done in O(N)O(N).
+Nearest smaller value on right for each index in prefix array nsv(i) can be computed in O(N). Sum of all
+subarrays with fixed left index and moving right index can be computed in O(1), if we have pre computed prefix sum
+array of A i.e. P and prefix sum array of P i.e. PP. Precomputation of prefix sum arrays can be done in O(N).
 The overall time complexity of the above solution would be O(N)
