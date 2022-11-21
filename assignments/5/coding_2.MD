@@ -27,7 +27,7 @@ The first line of the input gives the number of test cases T. T test cases follo
 
 Each test case begins with one line consisting an integer N denoting the number
 of integers in the input array A. Then the next line contains N integers
-$\mathbf{A_1}, \mathbf{A_2}, \dots, \mathbf{A_N} $ representing the integers in given
+$\mathbf{A_1}, \mathbf{A_2}, \dots, \mathbf{A_N}$ representing the integers in given
 input array A.
 
 ## Output
