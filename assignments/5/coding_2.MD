@@ -1,4 +1,4 @@
-# Coding 2- Good Subarrays
+# Coding 2- Good Subarrays (Please read the math equations on Github)
 
 1. All test cases are given and there are no code templates
 2. There are solution analysis in the end.
