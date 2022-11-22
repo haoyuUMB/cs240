@@ -27,6 +27,13 @@ target_link_libraries(resizing_array_demo_client.out cs240-lib)
 add_executable(bt_client_demo.out bt_client_demo.c)
 target_link_libraries(bt_client_demo.out cs240-lib)
 
-add_executable(padding_demo_client.out padding_demo_client.c)
+add_executable(padding_demo_client.out padding_endianess_demo_client.c)
 target_link_libraries(padding_demo_client.out cs240-lib)
 
+
+add_executable(errorno_demo.out errorno_demo.c)
+target_link_libraries(errorno_demo.out cs240-lib)
+
+
+add_executable(stream_buffer_demo_client.out stream_buffer_demo_client.c)
+target_link_libraries(stream_buffer_demo_client.out cs240-lib)

@@ -4,26 +4,23 @@
 
 #include <stdint.h>
 #include <math.h>
+#include <stdio.h>
 
 
-void bin_char(unsigned n, char s[]) {
+void bin_char(unsigned n, char s[],  int len) {
 
     unsigned i, j = 0;
-
-    // for (j = 31; j > 0  ; i = 1 << j--) {
-    //     s[j++] = (n & i)?  '1' : '0';
-    // }
-
-    for (i = 1 << 31; i > 0; i = i / 2) {
+    for (i = 1 << (len-1); i > 0; i = i / 2) {
         s[j++] = (n & i) ? '1' : '0';
     }
     s[j] = 0;
 }
 
 void print(char s[], int q) {
-    printf(" %2d-string: \n", q);
-    for (int i = 0; s[i]; i++) {
-        if (!((i) % 4) && i != 0) printf("|");
+    printf("%2d-string: \n", q);
+    for (int i = 0; i<q; i++) {
+        if (!((i) % 4) && i != 0) printf(",");
+        if (!((i) % 8) && i != 0) printf(" || ");
         printf("%c", s[i]);
     }
     printf("\n");
@@ -34,14 +31,14 @@ typedef struct {
     char *p;  /* 8 bytes */
     char c;   /* 1 byte */ // here the c ompiler padded extra 7 bytes
     long x;   /* 8 bytes */
-} foo;
+} Foo;
 
 
 typedef struct __attribute__((__packed__)) {
     char *p;    /* 8 bytes */
     char c;        /* 1 byte */
     long x;        /* 8 bytes */
-} foo1;
+} Foo1;
 
 typedef struct {
     int i;  //4
@@ -53,7 +50,7 @@ typedef struct {
     int i; //4
     short j;  // 2 2 padded
     long k; // 8
-} foo3;
+} Foo3;
 
 
 void testEndianess() {
@@ -67,11 +64,19 @@ void testEndianess() {
     // 0001 0010  0011 0100 0101 0110 0111 1000  big
     //0x//    1    2     3    4	   5    6    7    8
 
-
+    printf("\nHex-String:%x\n", i);
     char si[32];
-    bin_char(i, si);
+    char *nums = &i;
+    bin_char(i, si, 32);
     print(si, 32);
-    printf("Hex-String:%x\n", i);
+    for (int j = 0; j < 4; ++j) {
+        printf("%x\t", nums[j]);
+    }
+    for (int j = 0; j < 4; ++j) {
+        bin_char(nums[j], si, 8) ;
+        print(si, 8);
+    }
+    printf("\n");
 
 
 
@@ -292,17 +297,17 @@ void bitfiled_eg2() {
 }
 
 
-void testPadding() {
+int main () {
 
-    // printf("%ld\n", sizeof(foo));
-    // printf("%ld\n", sizeof(foo1));
-    // printf("%ld\n", sizeof(Foo2));
-    // printf("%ld\n", sizeof(foo3));
+     printf("Foo: %ld\n", sizeof(Foo));
+     printf("Foo1: %ld\n", sizeof(Foo1));
+     printf("foo2 %ld\n", sizeof(Foo2));
+     printf("Foo3 %ld\n", sizeof(Foo3));
 
-    // testEndianess();
+     testEndianess();
     // union_eg();
 
-    bitfiled_eg2();
+//    bitfiled_eg2();
 
 
 }
