@@ -5,6 +5,6 @@ add_library(cs240-lib
         src/linked.c header/linked.h
         src/fixed_data_types.c header/fixed_data_types.h
         src/hash_table.c header/hash_table.h
-        )
+        src/bt.c header/bt.h)
 target_include_directories(cs240-lib PUBLIC ./header)
 add_subdirectory(client)
