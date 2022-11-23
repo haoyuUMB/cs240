@@ -37,3 +37,9 @@ target_link_libraries(errorno_demo.out cs240-lib)
 
 add_executable(stream_buffer_demo_client.out stream_buffer_demo_client.c)
 target_link_libraries(stream_buffer_demo_client.out cs240-lib)
+
+add_executable(process_demo.out process_demo.c)
+target_link_libraries(process_demo.out cs240-lib)
+
+add_executable(stream_demo.out stream_demo.c)
+target_link_libraries(stream_demo.out cs240-lib)

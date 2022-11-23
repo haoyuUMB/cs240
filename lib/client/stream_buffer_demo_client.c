@@ -29,27 +29,27 @@
 #include <unistd.h>
 
 void test_FullBuffering(void);
+
 void test_LineBuffering(void);
+
 void test_NoBuffering(void);
 
 
-
-int main(int argc, char *argv[])
-{
-    // test_FullBuffering();
+int main(int argc, char *argv[]) {
+    test_FullBuffering();
     // test_LineBuffering();
-    test_NoBuffering();
-
-    fflush(stdout);
-    sleep(3);
-    printf("Program exits\n");
+//    test_NoBuffering();
+//
+//    fflush(stdout);
+//    sleep(3);
+//    printf("Program exits\n");
     return 0;
 }
 
 
-void test_FullBuffering(void){
+void test_FullBuffering(void) {
 
-    int buf_size = 1024;
+    int buf_size = 500;
     char buf[buf_size];
     memset(buf, '\0', buf_size);
 
@@ -63,18 +63,22 @@ void test_FullBuffering(void){
     printf("To be flushed\n");
     printf("To be flushed\n");
     printf("To be flushed\n");
-    fprintf(stdout, "%s\n", "To be flushed\n" );
-
+    fprintf(stdout, "%s\n", "To be flushed\n");
+    printf("Active flushing\nThen full flushing");
     fflush(stdout);
     printf("After flushing. Waiting on exit of process\n");
-    sleep(4);
+    int i = 500;
+    while (i--) {
+        fprintf(stdout, "%d\t", i);
+    }
+    sleep(10);
+    printf("After sleep!\n");
     fflush(stdout);
-    printf("Testing exits\n");
+    printf("Active flush and testing exits\n");
 }
 
 
-
-void test_LineBuffering(void){
+void test_LineBuffering(void) {
 
     int buf_size = 1024;
     char buf[buf_size];
@@ -90,7 +94,7 @@ void test_LineBuffering(void){
 }
 
 
-void test_NoBuffering(void){
+void test_NoBuffering(void) {
 
     int buf_size = 1024;
     char buf[buf_size];

@@ -203,7 +203,13 @@ int main() {
 //    running_time_test_merge_sort_demo();
 
 //    sorting_comparisons_mergesort_qsort(30);
-    sorting_comparisons_selection_mergesort_qsort(20);
+//    sorting_comparisons_selection_mergesort_qsort(20);
+
+//    SORTS = {selection_sort_Array, mergesort_Array, qsort_Array};
+
+    Array *(*sorts[])(Array *const arr, COMPARATOR) = {selection_sort_Array, mergesort_Array, qsort_Array};
+    printf("%p\n%p\n", sorts[0], selection_sort_Array);
+
 
 //
 //    int arr[] = {1, 2};
