@@ -46,3 +46,6 @@ target_link_libraries(stream_demo.out cs240-lib)
 
 add_executable(hashtable_demo_client.out hashtable_demo_client.c)
 target_link_libraries(hashtable_demo_client.out cs240-lib)
+
+add_executable(struct_passing_julian.out struct_passing_julian.c)
+target_link_libraries(struct_passing_julian.out cs240-lib)
