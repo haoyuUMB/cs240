@@ -29,7 +29,7 @@ void print(char s[], int q) {
 
 typedef struct {
     char *p;  /* 8 bytes */
-    char c;   /* 1 byte */ // here the c ompiler padded extra 7 bytes
+    char c;   /* 1 byte */ // here the compiler padded extra 7 bytes
     long x;   /* 8 bytes */
 } Foo;
 
@@ -304,7 +304,7 @@ int main () {
      printf("foo2 %ld\n", sizeof(Foo2));
      printf("Foo3 %ld\n", sizeof(Foo3));
 
-     testEndianess();
+//     testEndianess();
     // union_eg();
 
 //    bitfiled_eg2();

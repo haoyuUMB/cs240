@@ -36,11 +36,14 @@ void test_NoBuffering(void);
 
 
 int main(int argc, char *argv[]) {
-    test_FullBuffering();
-    // test_LineBuffering();
+    getchar();
+//    test_FullBuffering();
+//     test_LineBuffering();
 //    test_NoBuffering();
 //
 //    fflush(stdout);
+//    printf("in mainfuncion after testing \n");
+
 //    sleep(3);
 //    printf("Program exits\n");
     return 0;
@@ -49,7 +52,7 @@ int main(int argc, char *argv[]) {
 
 void test_FullBuffering(void) {
 
-    int buf_size = 500;
+    int buf_size = 5;
     char buf[buf_size];
     memset(buf, '\0', buf_size);
 
@@ -60,37 +63,38 @@ void test_FullBuffering(void) {
 // fprintf(stdout,"asd");
 
     printf("To be flushed\n");
-    printf("To be flushed\n");
-    printf("To be flushed\n");
-    printf("To be flushed\n");
-    fprintf(stdout, "%s\n", "To be flushed\n");
-    printf("Active flushing\nThen full flushing");
-    fflush(stdout);
-    printf("After flushing. Waiting on exit of process\n");
-    int i = 500;
-    while (i--) {
-        fprintf(stdout, "%d\t", i);
-    }
-    sleep(10);
-    printf("After sleep!\n");
-    fflush(stdout);
-    printf("Active flush and testing exits\n");
+//    printf("To be flushed\n");
+//    printf("To be flushed\n");
+//    printf("To be flushed\n");
+//    fprintf(stdout, "%s\n", "To be flushed\n");
+//    printf("Active flushing\nThen full flushing");
+//    fflush(stdout);
+//    printf("After flushing. Waiting on exit of process\n");
+//    int i = 500;
+//    while (i--) {
+//        fprintf(stdout, "%d\t", i);
+//    }
+    sleep(5);
+    printf("1");
+//    printf("After sleep!\n");
+//    fflush(stdout);
+//    printf("Active flush and testing exits\n");
 }
 
 
 void test_LineBuffering(void) {
 
-    int buf_size = 1024;
+    int buf_size = 10;
     char buf[buf_size];
     memset(buf, 0, buf_size);
 
     setvbuf(stdout, buf, _IOLBF, buf_size);
 
-    printf("String with new Line Char\n");
+    printf("String with new Line Char");
 
     printf("String with no new line");
     printf("again");
-    sleep(3);
+    sleep(10);
 }
 
 
