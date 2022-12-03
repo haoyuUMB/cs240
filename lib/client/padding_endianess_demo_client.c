@@ -7,10 +7,10 @@
 #include <stdio.h>
 
 
-void bin_char(unsigned n, char s[],  int len) {
+void bin_char(unsigned n, char s[], int len) {
 
     unsigned i, j = 0;
-    for (i = 1 << (len-1); i > 0; i = i / 2) {
+    for (i = 1 << (len - 1); i > 0; i = i / 2) {
         s[j++] = (n & i) ? '1' : '0';
     }
     s[j] = 0;
@@ -18,7 +18,7 @@ void bin_char(unsigned n, char s[],  int len) {
 
 void print(char s[], int q) {
     printf("%2d-string: \n", q);
-    for (int i = 0; i<q; i++) {
+    for (int i = 0; i < q; i++) {
         if (!((i) % 4) && i != 0) printf(",");
         if (!((i) % 8) && i != 0) printf(" || ");
         printf("%c", s[i]);
@@ -52,7 +52,6 @@ typedef struct {
     long k; // 8
 } Foo3;
 
-
 void testEndianess() {
 
 
@@ -64,19 +63,26 @@ void testEndianess() {
     // 0001 0010  0011 0100 0101 0110 0111 1000  big
     //0x//    1    2     3    4	   5    6    7    8
 
-    printf("\nHex-String:%x\n", i);
     char si[32];
     char *nums = &i;
-    bin_char(i, si, 32);
-    print(si, 32);
+    printf("i:0X%x\ni:0X", i);
     for (int j = 0; j < 4; ++j) {
-        printf("%x\t", nums[j]);
-    }
-    for (int j = 0; j < 4; ++j) {
-        bin_char(nums[j], si, 8) ;
-        print(si, 8);
+        printf("%x", nums[j]);
     }
     printf("\n");
+
+//    printf("\nHex-String:%x\n", i);
+
+//    bin_char(i, si, 32);
+//    print(si, 32);
+//    for (int j = 0; j < 4; ++j) {
+//        printf("%x\t", nums[j]);
+//    }
+//    for (int j = 0; j < 4; ++j) {
+//        bin_char(nums[j], si, 8) ;
+//        print(si, 8);
+//    }
+//    printf("\n");
 
 
 
@@ -87,19 +93,19 @@ void testEndianess() {
 
 
 // unsigned char <==> uint8_t
-    uint8_t *p = (uint8_t *) &i;
-
-    for (int i = 0; i < 4; ++i) {
-        printf("%x\t", p[i]);
-    }
-
-
+//    uint8_t *p = (uint8_t *) &i;
+//
+//    for (int i = 0; i < 4; ++i) {
+//        printf("%x\t", p[i]);
+//    }
+//
+//
     int j = 1;
 
     // 0000 0001  0000 0000 0000 0000 0000 0000  little
     // 0000 0000  0000 0000 0000 0000 0000 0001  big
 
-    uint8_t *p1 = (uint8_t *) &j;
+    uint8_t *p1 = (uint8_t *) &j; // <==> unsigned of 8 bits or 1 byte
     if (*p1 == 1)
         printf("little endianess\n");
     else
@@ -108,28 +114,31 @@ void testEndianess() {
 
 }
 
-
 void union_eg() {
+    //    u:
+    //    0111 1000  0101 0110 0011 0100 0001 0010  little
+    // 	  7    8     5    6    3    4    1    2
+    //
     union u_tag {
-        int i;
-        char s;
-    } u = {0x12345678};
+        int i; // 4 bytes
+        char s; // 1 byte
+    } u = {0x12345678}; // member s and i sharing the starting address
+
+    printf("size of u: %lu\n", sizeof(u));
     //little endianesss on my machine
     //so s will be least sinificant byte if i
 
-    // printf("%x\n", u.i);
-    // printf("%x\n", u.s);
-    // printf("%x\n", *(&u.s+1));
-    // printf("%x\n", *(&u.s+2));
-    // printf("%x\n", *(&u.s+3));
+    printf("u.i: 0x%x\n", u.i);
+    printf("U.s char 0x%c\n", u.s);
+    printf("x 0x%x\n", 'x');
+    printf("U.s hex 0x%x\n", u.s);
+    printf("2nd %x\n", *(&u.s + 1));
+    printf("3rd %x\n", *(&u.s + 2));
+    printf("4th %x\n", *(&u.s + 3));
 
-
-
+    //
     typedef union {
-
         unsigned ip;
-
-
         struct {
             uint8_t fourth, third, second, first;
         };
@@ -149,10 +158,22 @@ void union_eg() {
     ip.third = 0x56;
     ip.second = 0x34;
     ip.first = 0x12;
+//
+    printf("ip.ip: 0x%x\n", ip.ip);
+//
+//    printf("%ld\n", sizeof(IP));
+    typedef union {
+        unsigned ip;
+        char s[4];
+    } ArrayUnion;
 
-    printf("%x\n", ip.ip);
+    ArrayUnion arrU = {0x12345678};
+    printf("arrU.s[0]: 0x%x\n", arrU.s[0]);
 
-    printf("%ld\n", sizeof(IP));
+    ArrayUnion arrU1 = {{0x12, 0x34}};
+    printf("arrU1.s[0]: 0x%x\n", arrU1.s[0]);
+    printf("arrU1.s[1]: 0x%x\n", arrU1.s[1]);
+    printf("arrU1.i: 0x%x\n", arrU1.ip);
 
 
 }
@@ -297,15 +318,15 @@ void bitfiled_eg2() {
 }
 
 
-int main () {
+int main() {
 
-     printf("Foo: %ld\n", sizeof(Foo));
-     printf("Foo1: %ld\n", sizeof(Foo1));
-     printf("foo2 %ld\n", sizeof(Foo2));
-     printf("Foo3 %ld\n", sizeof(Foo3));
+//    printf("Foo: %ld\n", sizeof(Foo));
+//    printf("Foo1: %ld\n", sizeof(Foo1));
+//    printf("foo2 %ld\n", sizeof(Foo2));
+//    printf("Foo3 %ld\n", sizeof(Foo3));
 
-//     testEndianess();
-    // union_eg();
+//    testEndianess();
+    union_eg();
 
 //    bitfiled_eg2();
 
