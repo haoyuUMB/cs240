@@ -35,7 +35,7 @@ the number of K-stopwatchs in the array.
 Time limit: 60 seconds.\
 1 ≤ T ≤ 100.\
 2 ≤ K ≤ N.\
-1 ≤ A_i ≤ 2 × 105, for all i.
+1 ≤ A_i ≤ 2 × 10^5, for all i.
 
 #### Test Set 1
 
