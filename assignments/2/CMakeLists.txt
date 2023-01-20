@@ -1,1 +1,0 @@
-add_executable(coding_1.out coding_1.c)

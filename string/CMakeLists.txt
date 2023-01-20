@@ -1,1 +1,0 @@
-add_executable(string_demo.out reverse_string.c)
