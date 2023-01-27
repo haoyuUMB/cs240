@@ -1,0 +1,1 @@
+add_executable(lec2-main main.c)
