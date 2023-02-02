@@ -17,9 +17,9 @@ int main(void)
     printf("the address of b is: 0x%p, the size is: %u bytes\n", &b, sizeof(b));
 
 
-    signed int c; // <==> int c; there is 1 highest bit for sign bit 1 stands negative and 0 stands postive
+    signed int c; // <==> int c; there is 1 highest bit for sign bit 1 stands for negative and 0 stands positive
     unsigned int d; // there is no sign bit
-    // as a result: signed integer has 31 bits of values bits and unsign has 32 bits of values
+    // as a result: signed integer has 31 bits of values bits and unsigned has 32 bits of values
     // 0000 0000  0000 0000 0000 0000 0000 0000 0000 0000
 
 
