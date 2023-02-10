@@ -1,0 +1,1 @@
+add_executable(lec4_array array.c)
