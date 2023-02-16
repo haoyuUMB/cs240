@@ -6,3 +6,4 @@ add_subdirectory(src/lec2)
 add_subdirectory(src/lec3)
 
 add_subdirectory(src/lec4)
+add_subdirectory(src/lec5)

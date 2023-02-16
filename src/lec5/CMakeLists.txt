@@ -1,0 +1,1 @@
+add_executable(lec5_main.out main.c)
