@@ -3,23 +3,56 @@
 //
 #include <stdio.h>
 
-int main() {
+// any experssion in c assume a value
+// with assginement or comma, it is the right value
+//
+void commna_demo() {
+    int i = 0, j = 0;
+    printf("%d\n", j + (i = 2 * 2));
+    printf("%d", (j + (i = 2 * 2), 10, i + (j = 1)));
+}
 
-    // i++ <==> i += 1; when used as a single line statement
+// break and continue demo
+void demo() {
+    for (int i = 0; i < 10; ++i) {
+        if (i == 5) break; // break is jump out of loop totally
+        if (i % 2 != 0) continue; // skip the rest of the statements in loops body
+        printf("%d\n", i);
+        printf("***\n");
+    }
 
-    int j;
-    for (int i = 0; i < 10; i++) {
-        switch (i) {
-            case 0:
-                printf("case 0\n");
-                break;
-            case 1:
-                printf("case 1\n");
-                break;
-            default:
-                printf("case default\n");
+    int i = 0;
+    while (1) {
+        i++;
+        if (i == 10) { break; }
+    }
+
+    for (int j = 0; 1; ++j) {
+        if (j == 10) {
+            i++;
+            break;
         }
     }
+}
+
+int main() {
+//    commna_demo();
+    demo();
+    // i++ <==> i += 1; when used as a single line statement
+
+//    int j;
+//    for (int i = 0, k = 0, j = 1; i < 10; i++) {
+//        switch (i) {
+//            case 0:
+//                printf("case 0\n");
+//                break;
+//            case 1:
+//                printf("case 1\n");
+//                break;
+//            default:
+//                printf("case default\n");
+//        }
+//    }
 
 //    int n = 0;
 //    // post self increment
