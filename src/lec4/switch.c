@@ -38,6 +38,8 @@ void demo() {
 int main() {
 //    commna_demo();
     demo();
+    printf("%g", 3.14E0);
+
     // i++ <==> i += 1; when used as a single line statement
 
 //    int j;
