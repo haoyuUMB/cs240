@@ -13,7 +13,7 @@ int len(char s[]) {
 
 void scanf_demo1() {
     int i, sum = 0;
-    while (scanf("%d", &i) != -1) sum += i;
+    while (scanf("%d", &i) != EOF) sum += i;
     printf("%d\n", sum);
 
 }
@@ -28,7 +28,7 @@ void statistics_text_file_word() {
 
 void scanf_demo() {
     char s[1000];
-    while (scanf("%s", s) != -1)
+    while (scanf("%s", s) != EOF)
         printf("%s\n", s);
 
 }
@@ -42,16 +42,33 @@ void get_char_demo() {
 }
 
 /**
- * Read in a text file, print out how many different character it uses
- * and the occurrences for each character that appears
+ * Read in a text file from stdin, print out how many different character it uses
+ * and the occurrences for each character that appears exclude the null character
  */
 void statistics_text_file_char() {
+    int c, count = 0, counts[200] = {}, res = 0; // have to initialize to all 0
+    // ascii code has 128 character starting from 0
+    // 0 is null character
 
+    // ASCII code is used for index/key
+
+    // so the c returned will be from 0-128
+    while ((c = getchar()) != EOF) {
+        counts[c] += 1; //
+    }
+    for (int i = 0; i < 200; ++i) {
+        if (counts[i] != 0) {
+            printf("char %c: appears %10d times\n", i, counts[i]);
+            res++;
+        }
+    }
+    printf("The total number of diff chars is: %d \n", res);
 }
 
 
 int main() {
 //    get_char_demo();
 //    scanf_demo();
-    scanf_demo1();
+//    scanf_demo1();
+    statistics_text_file_char();
 }
