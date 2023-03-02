@@ -15,22 +15,41 @@ Similarly, the following letter for letter z would be letter a.
 Your aim is to find the minimum number of operations that are required such that each letter in string S after applying
 the operations, is present in string F.
 
-## Function
 
-```C
-int solution(char *S, char *F){
-    
-    
-}
-```
+****
 
-### Arguments
+## Input
 
-Two strings S and F and the letters in string F are lexicographically sorted.
+The first line of the input gives the number of test cases, T. T
+test cases follow.
+
+1. Each test case consists of two lines.
+2. The first line of each test case contains the string S.
+3. The second line of each test case contains the string F.
 
 ### Output
 
-An integer
+For each test case, output one line containing Case #x: y, where x is
+the test case number (starting from 1) and y is the minimum number of
+operations that are required such that each letter in string S
+after applying the operations, is one of the characters in string F.
+
+## Limits
+
+1. Time limits: 60 seconds
+2. 1 ≤ T ≤ 100.
+3. 1 ≤ the length of S ≤ 10^5.
+4. S only consists of lower case English letters.
+5. F only consists of distinct lower case English letters.
+6. The letters in string F are lexicographically sorted.
+
+### Test Set 1
+
+- The length of F = 1.
+
+### Test Set 2
+
+- 1 ≤ the length of F ≤ 26.
 
 ## Sample
 

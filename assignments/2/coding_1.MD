@@ -33,15 +33,6 @@ we add after a dog eats a portion of dog food, respectively.
 The next line contains a string S of length N representing the
 arrangement of animals.
 
-## Function
-
-```C
-char * solution(int D, int C, int M, char *S){
-    
-    
-}
-```
-
 ****
 
 ### Output
