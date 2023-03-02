@@ -6,32 +6,6 @@
 
 # Part1: Short Answer Questions
 
-### 1. Called by Value (10 Points)
-
-What it means called by value in C?
-What are the values being passed when arguments are integer and char data respectively?
-
-**Answer**:
-
-### 2. Scope (10 Points)
-
-What is the scope of a variable in C? What's the usage of the
-key word *extern* in C?
-
-**Answer**:
-
-### 3. Static (10 Points)
-
-What is the static key word means for an external and an internal variable?
-
-**Answer**:
-
-### 4. Commandline Arguments (10 Points)
-
-How to use commandline arguments in C? Give an example.
-
-**Answer**:
-
 # Part2: Coding  (60 Points)
 
 Read the question in the README file and then complete the [solution] function
