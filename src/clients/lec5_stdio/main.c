@@ -13,6 +13,7 @@ int len(char s[]) {
 
 void scanf_demo1() {
     int i, sum = 0;
+    // what happens if the word cannot be converted into integer
     while (scanf("%d", &i) != EOF) sum += i;
     printf("%d\n", sum);
 
@@ -30,7 +31,6 @@ void scanf_demo() {
     char s[1000];
     while (scanf("%s", s) != EOF)
         printf("%s\n", s);
-
 }
 
 void get_char_demo() {
@@ -69,6 +69,6 @@ void statistics_text_file_char() {
 int main() {
 //    get_char_demo();
 //    scanf_demo();
-//    scanf_demo1();
-    statistics_text_file_char();
+    scanf_demo1();
+//    statistics_text_file_char();
 }
