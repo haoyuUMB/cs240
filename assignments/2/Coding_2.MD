@@ -53,10 +53,19 @@ after applying the operations, is one of the characters in string F.
 
 ## Sample
 
-| Case Index | Arguments  | Output |
-|------------|------------|--------|
-| 1          | "abcd" "a" | 6      |
-| 2          | "pppp" "p" | 0      |
+```c
+Sample input:
+2
+abcd
+a
+pppp
+p
+
+
+Sample output:
+Case #1: 6
+Case #2: 0
+```
 
 In Sample Case #1, all the letters in string S should be converted to letter a. We can keep on changing the letters to
 its preceding letter till we reach the letter a. We do not need to change the first letter as it is already a. The
@@ -69,11 +78,23 @@ operations.
 
 ## Additional Sample
 
-| Case Index | Arguments                 | Output |
-|------------|---------------------------|--------|
-| 1          | "pqrst" "ou"              | 9      |
-| 2          | "abf" "abf"               | 0      |
-| 3          | "aaaaaaaaaaaaaaab" "aceg" | 1      |
+```c
+Sample input:
+3
+pqrst
+ou
+abd
+abd
+aaaaaaaaaaaaaaab
+aceg
+
+
+Sample output:
+Case #1: 9
+Case #2: 0
+Case #3: 1
+
+```
 
 n Sample Case #1, all the letters in string S should be converted to either the letter o or the letter u. For the first
 and second letters it is optimal to change them to preceding letters till they are changed to letter o. The first letter
@@ -88,9 +109,3 @@ operations.
 
 In Sample Case #3, we only need to change the last letter b to either a or c. Thus, we only need 1 operation.
 
-| Data Type | Size (Bytes) |
-|-----------|--------------|
-| short     | 2            |
-| int       | 4            |
-| long      | 8            |
-| pointer   | 8            |

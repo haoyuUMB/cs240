@@ -63,11 +63,23 @@ M = 0
 
 ## Sample
 
-| Case Index | Arguments       | Output |
-|------------|-----------------|--------|
-| 1          | 10 4 0 "CCDCDD" | "YES"  |
-| 2          | 1 2 0 "CCCC"    | "YES"  |
-| 3          | 2 1 0 "DCCD"    | "NO"   |
+```c
+Sample input:
+3
+6 10 4 0
+CCDCDD
+4 1 2 0
+CCCC
+4 2 1 0
+DCCD
+
+
+Sample output:
+Case #1: YES
+Case #2: YES
+Case #3: NO
+
+```
 
 In Sample Case #1, there are 10 portions of dog food and 4 portions of cat food.
 
@@ -88,10 +100,21 @@ cat food. Hence, the second dog will also not eat.
 
 ## Additional Sample
 
-| Case Index | Arguments            | Output |
-|------------|----------------------|--------|
-| 1          | 4 2 2 "CDCCCDCCDCDC" | "YES"  |
-| 2          | 2 1 3 "DCCCCCDC"     | "NO"   |
+```c
+Sample input:
+2
+12 4 2 2
+CDCCCDCCDCDC
+8 2 1 3
+DCCCCCDC
+
+
+Sample output:
+Case #1: YES
+Case #2: NO
+
+
+```
 
 In Sample Case #1, 2 portions of cat food appear whenever a dog eats a portion of dog food.
 
