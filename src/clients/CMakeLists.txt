@@ -1,9 +1,4 @@
 set(CUR ${CMAKE_CURRENT_SOURCE_DIR})
-#file(GLOB files RELATIVE ${CUR} *)
-#foreach (file IN LISTS files)
-#    message(STATUS ${file})
-#endforeach (file)
-
 
 file(GLOB_RECURSE files CONFIGURE_DEPENDS RELATIVE ${CUR} *.c)
 foreach (file IN LISTS files)
@@ -12,31 +7,6 @@ foreach (file IN LISTS files)
     STRING(REPLACE ".c" ".out" LIB_NAME ${LIB_NAME})
     #    message(STATUS ${LIB_NAME})
     add_executable(${LIB_NAME} ${file})
-    target_link_libraries(${LIB_NAME} cs240-lib)
+    #    target_link_libraries(${LIB_NAME} cs240-lib)
 endforeach (file)
 
-
-#file(GLOB children RELATIVE . ./*)
-#message(STATUS ${chidren})
-#set(dirlist "")
-#foreach (child ${children})
-#    if (IS_DIRECTORY ${curdir}/${child})
-#        list(APPEND dirlist ${child})
-#    endif ()
-#endforeach ()
-#message(STATUS ${dirlist})
-
-
-#macro(SUBDIRLIST result curdir)
-#    file(GLOB children RELATIVE ${curdir} ${curdir}/*)
-#    set(dirlist "")
-#    foreach (child ${children})
-#        if (IS_DIRECTORY ${curdir}/${child})
-#            list(APPEND dirlist ${child})
-#        endif ()
-#    endforeach ()
-#    set(${result} ${dirlist})
-#endmacro()
-#
-#SUBDIRLIST(subs ..)
-#message(STATUS ${subs} bbb)
