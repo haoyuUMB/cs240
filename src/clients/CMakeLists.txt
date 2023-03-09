@@ -7,6 +7,6 @@ foreach (file IN LISTS files)
     STRING(REPLACE ".c" ".out" LIB_NAME ${LIB_NAME})
     #    message(STATUS ${LIB_NAME})
     add_executable(${LIB_NAME} ${file})
-    #    target_link_libraries(${LIB_NAME} cs240-lib)
+    target_link_libraries(${LIB_NAME} cs240-lib)
 endforeach (file)
 
