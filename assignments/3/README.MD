@@ -16,7 +16,7 @@
 
 **Answer**:
 
-### 3.What is the scope of a variable in C? how do C define a scope of a variable? can you define a same variable name again in a different scope (10 Points)
+### 3.What is the scope of a variable in C? how do C define a scope of a variable? can you define the same variable name again in a different scope (10 Points)
 
 **Answer**:
 
