@@ -13,7 +13,9 @@ _deps
 .idea
 cmake-build-debug
 **/*.out
+**/*.exe
 **/*.o
+**/*.a
 *.out
 *.o
 private
