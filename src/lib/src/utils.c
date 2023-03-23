@@ -3,6 +3,8 @@
 //
 #include <cs240/utils.h>
 
+double pi = 3.1415;
+
 int add(int a, int b) {
     return a + b;
 }
