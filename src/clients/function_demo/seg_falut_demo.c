@@ -13,8 +13,9 @@ extern double this_pi;
 // argv 0: main
 // argv 1: 1
 
-int main(int argc, char *argv[]) {
-//    char s[2], i = 1;
+
+void demo1() {
+    //    char s[2], i = 1;
 //    while (i++) {
 //        printf("hello%d\n", i);
 //        s[-i] = 'a';
@@ -34,7 +35,12 @@ int main(int argc, char *argv[]) {
     }
 
     printf("i: %d\n", i); // 1
+}
 
 
+int main(int argc, char *argv[]) {
+
+    char *s = "hello world"; // constant memory
+    s[1] = 1;
     return 0;
 }
