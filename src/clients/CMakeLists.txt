@@ -1,6 +1,6 @@
 set(CUR ${CMAKE_CURRENT_SOURCE_DIR})
 
-file(GLOB_RECURSE files CONFIGURE_DEPENDS RELATIVE ${CUR} *.c)
+file(GLOB_RECURSE files CONFIGURE_DEPENDS RELATIVE ${CUR} *.c *.cpp)
 foreach (file IN LISTS files)
     #    message(${file})
     STRING(REPLACE "/" "_" LIB_NAME ${file})

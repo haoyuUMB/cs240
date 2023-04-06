@@ -23,4 +23,7 @@ int add(int a, int b); //just declaration is not enough
 int main() {
     printf("Hello %d %g\n", max(2, 1), PI);
     printf("1 add 2 %d\n", add(1, 2));
+    printf("1 add 2 %d\n", 6 % (8 / 4));
+
+
 }
