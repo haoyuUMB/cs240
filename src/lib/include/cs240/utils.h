@@ -30,7 +30,7 @@ int rand_int();
 
 int rand_int_range(int range);
 
-int *rand_int_array_utils(int *const arr, int l, int max);
+int *rand_int_array_utils(int *arr, int l, int max);
 
 int **rand_int_matrix_utils(int **arr, int m, int n, int max);
 
