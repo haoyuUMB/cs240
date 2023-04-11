@@ -83,3 +83,16 @@ void memswap(void *const a, void *const b, int size) {
     memcpy(b, a, size);
     memcpy(a, tmp, size);
 }
+
+/**
+ *
+ * @param a
+ * @param b
+ * @param size the length of the datatype: like sizeof(int) sizeof (long long)
+ */
+void swap(void *a, void *b, int size) {
+    char tmp[size];
+    memcpy(tmp, a, size); // tmp = a
+    memcpy(a, b, size);// a = b
+    memcpy(b, tmp, size);// b = tmp
+}

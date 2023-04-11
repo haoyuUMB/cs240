@@ -44,4 +44,6 @@ void *resize(void *a, int size);
 
 void memswap(void *const a, void *const b, int size);
 
+void swap(void *a, void *b, int size);
+
 #endif //CS240_UTILS_H
