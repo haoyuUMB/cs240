@@ -6,7 +6,7 @@ int int_Compare(const void *a, const void *b) {
 }
 
 int int_array_Compare(const void *a, const void *b) {
-    int (*pa)[2] = a, (*pb)[2] = b;
+    int (*pa)[2] = (int (*)[2]) a, (*pb)[2] = (int (*)[2]) b;
     return pa[0][1] - pb[0][1];
 }
 

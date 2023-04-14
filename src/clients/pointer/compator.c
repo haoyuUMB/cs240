@@ -26,7 +26,7 @@ int longlongCompare(const long long *a, const long long *b) {
 }
 
 /**
- * return the index of the minimum value of  generic array, with its comparartor
+ * return the index of the minimum value of  generic array, with its comparator
  * @param a
  * @param size
  * @param compare
@@ -35,7 +35,7 @@ int longlongCompare(const long long *a, const long long *b) {
 int minGeneric(const void *a, int len, int size, int (*compare)(const void *, const void *)) {
     int res = 0;
     for (int i = 1; i < len; ++i) {
-        if (compare(a + i * size, a + res * size) <= 0) res = i;
+        if (compare(a + i * size, a + res * size) < 0) res = i;
     }
     return res;
 }
@@ -52,6 +52,10 @@ int main(int argc, char *argv[]) {
 
     long long nums_long[len];
     qsort(nums_long, len, sizeof(long long), (int (*)(const void *, const void *)) longlongCompare);
+
+    rand_int_array_utils(nums, len, 20);
+    print_int_array(nums, len);
+    printf("min index is: %d", minGeneric(nums, len, sizeof(int), intCompare));
 
 
     return 0;
