@@ -4,6 +4,7 @@
 #include <cs240/utils.h>
 #include <stdio.h>
 
+
 double pi = 3.1416926; // global
 static int seed = 3; // static external limit the scope to the current file
 int non_static = 3;

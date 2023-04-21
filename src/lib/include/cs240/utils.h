@@ -8,7 +8,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-
+#define INT(i) *(int*) i
 #define max(a, b) (a) >= (b) ? a : b
 #define PI 3.1416926
 
