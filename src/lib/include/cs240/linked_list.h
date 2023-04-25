@@ -5,8 +5,14 @@
 #ifndef CS240_LINKED_LIST_H
 #define CS240_LINKED_LIST_H
 
+typedef struct {
+    void *val;
+    int size;
+} Void;
+
 typedef struct node {
     void *val;
+    int size;
     struct node *next;
 } Node;
 
@@ -14,15 +20,22 @@ typedef struct {
     Node *top, *end;
 } LinkedList;
 
+// create a node on the heap
 Node *new_node(const void *val, int size);
+
+void free_node(Node *node);
 
 LinkedList new_linked_list();
 
 void append_top(LinkedList *list, const void *val, int size);
 
-void remove_top(LinkedList *list, const void *val, int size);
+void remove_top(LinkedList *list);
 
 void append_end(LinkedList *list, const void *val, int size);
+
+void reverse_ll(LinkedList *list);
+
+void reverse_ll_iterative(LinkedList *list);
 
 typedef LinkedList Stack;
 

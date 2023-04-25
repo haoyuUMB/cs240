@@ -9,6 +9,8 @@
 #include <stdlib.h>
 
 #define INT(i) *(int*) i
+#define FLOAT(p) *(float *) p
+
 #define max(a, b) (a) >= (b) ? a : b
 #define PI 3.1416926
 
