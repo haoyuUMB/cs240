@@ -49,16 +49,15 @@ void append_end(LinkedList *list, const void *val, int size) {
 }
 
 
-void remove_top(LinkedList *list) {
-    if (list->top == NULL) return;
-    if (list->top == list->end) {
-        free_node(list->top);
-        list->top = list->end = NULL;
-        return;
-    }
+void *remove_top(LinkedList *list) {
+    if (list->top == NULL) return NULL;
     Node *top = list->top;
+    if (list->top == list->end) {
+        list->top = list->end = NULL;
+        return top;
+    }
     list->top = list->top->next;
-    free_node(top);
+    return top;
 }
 
 
@@ -78,9 +77,9 @@ void reverse_ll(LinkedList *list) {
 void reverse_ll_iterative(LinkedList *list) {
     list->end = list->top;
     Node *pre = NULL, *next = NULL;
-    while (list->top) {
+    while (list->top != NULL) {
         next = list->top->next;
-        list->top->next = pre;
+        list->top->next = pre;// reverse the link
         pre = list->top;
         list->top = next;
     }
@@ -96,5 +95,14 @@ void print_int_linked_list(LinkedList list) {
     printf("\t the end is: %d\n", INT(list.end->val));
 }
 
+void push(Stack *stack, const void *val, int size) {
+    append_top(stack, val, size);
+}
 
+void *pop(Stack *stack) {
+    return remove_top(stack);
+}
 
+int empty_stack(Stack *stack) {
+    return stack->top == NULL;
+}

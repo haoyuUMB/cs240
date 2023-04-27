@@ -29,7 +29,7 @@ LinkedList new_linked_list();
 
 void append_top(LinkedList *list, const void *val, int size);
 
-void remove_top(LinkedList *list);
+void *remove_top(LinkedList *list);
 
 void append_end(LinkedList *list, const void *val, int size);
 
@@ -41,7 +41,7 @@ typedef LinkedList Stack;
 
 void push(Stack *stack, const void *val, int size);
 
-void pop(Stack *stack);
+void *pop(Stack *stack);
 
 typedef LinkedList Queue;
 
